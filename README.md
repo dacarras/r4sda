@@ -78,5 +78,4 @@ knitr::kable(wide_resp(items_data), digits = 2)
 | LS2T15   | 0.10 | 0.13 | 0.07 | 0.68 | 0.02 |
 | LS2T16   | 0.08 | 0.59 | 0.09 | 0.21 | 0.02 |
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+> Note: this readme is provisory

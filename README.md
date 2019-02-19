@@ -15,6 +15,12 @@ You can install the development version of r4sda from my
 devtools::install_github("dacarras/r4sda")
 ```
 
+## List of functions
+
+  - `wide_reps()` generates a table of items as rows, and response value
+    as columns, and displays the percentage of responses per items
+  - \[…\]
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -23,9 +29,6 @@ This is a basic example which shows you how to solve a common problem:
 # create an items data frame
 # items_data <- dplyr::select(data_frame, LS2T01:LS2T16)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
 
 ``` text
 # request a wide response data table with wide_resp() function

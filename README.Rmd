@@ -24,6 +24,13 @@ You can install the development version of r4sda from my [github](https://github
 devtools::install_github("dacarras/r4sda")
 ```
 
+## List of functions
+
+- `wide_reps()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per items
+- [...]
+
+
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:

@@ -1,4 +1,4 @@
-#' stack_resp() produces a frequency table in percentages where items are rows, responses are attributes of items, and percentages are presented for each response.
+#' stack_resp() produces a frequency table with percentages where items are rows, responses are attributes of items, and percentages are presented for each response.
 #'
 #' @param x a data frame, where rows = observations, and columns = variables
 #'

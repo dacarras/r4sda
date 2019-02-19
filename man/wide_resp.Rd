@@ -2,7 +2,7 @@
 % Please edit documentation in R/wide_resp.R
 \name{wide_resp}
 \alias{wide_resp}
-\title{wide_resp() produces a frequency tabel in percentages where items are rows and columns are response values}
+\title{wide_resp() produces a frequency table in percentages where items are rows and columns are response values}
 \usage{
 wide_resp(x)
 }
@@ -13,7 +13,7 @@ wide_resp(x)
 data frame with a frequency table
 }
 \description{
-wide_resp() produces a frequency tabel in percentages where items are rows and columns are response values
+wide_resp() produces a frequency table in percentages where items are rows and columns are response values
 }
 \examples{
 wide_resp(items_data)

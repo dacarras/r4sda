@@ -1,4 +1,4 @@
-#' wide_resp() produces a frequency tabel in percentages where items are rows and columns are response values
+#' wide_resp() produces a frequency table in percentages where items are rows and columns are response values
 #'
 #' @param x a data frame, where rows = observations, and columns = variables
 #'

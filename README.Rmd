@@ -14,11 +14,20 @@ knitr::opts_chunk$set(
 ```
 # r4sda
 
-The goal of r4sda is to make it easier when working with large scale assessment studies data.
+- The goal of r4sda is to make it easier when working with large scale assessment studies data.
+- Is a collection of wrapper functions, mainly, generated to resolve common tasks I often do when working with large scale assessment data.
+- It generates tables, variables tables, checks for nested data [pending], merge functions [pending]
+- It relies on libraries such as: dplyr, stringr, purrr
+
+
+# Pendings
+
+- add sample to show functions examples
+- add a viggnete
 
 ## Installation
 
-You can install the development version of r4sda from my [github](https://github.com/dacarras) repository with:
+You can install the development version of r4sda from this [github](https://github.com/dacarras/r4sda) repository with:
 
 ``` r
 devtools::install_github("dacarras/r4sda")
@@ -28,7 +37,7 @@ devtools::install_github("dacarras/r4sda")
 
 - `wide_resp()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per item.
 - `wide_var()` generates a table of response as rows, and variablesas columns, and displays the percentage of responses per item.
-- `stack_resp()` generates a table of items as rows, responses as attributes of items, and the percentage of each response caetgory.
+- `stack_resp()` generates a table of items as rows, responses as attributes of items, and the percentage of each response category.
 - [...]
 
 

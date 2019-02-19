@@ -26,9 +26,10 @@ devtools::install_github("dacarras/r4sda")
 
 ## List of functions
 
-- `wide_reps()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per items
+- `wide_resp()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per item.
+- `wide_var()` generates a table of response as rows, and variablesas columns, and displays the percentage of responses per item.
+- `stack_resp()` generates a table of items as rows, responses as attributes of items, and the percentage of each response caetgory.
 - [...]
-
 
 
 ## Example

@@ -16,6 +16,7 @@
 
   - add sample to show functions examples
   - add a viggnete
+  - add functions for weights in mixed models (methods a and method b)
 
 ## Installation
 
@@ -34,6 +35,8 @@ devtools::install_github("dacarras/r4sda")
     columns, and displays the percentage of responses per item.
   - `stack_resp()` generates a table of items as rows, responses as
     attributes of items, and the percentage of each response category.
+  - `c_mean()` estimate cluster means to aid cluster mean centering in
+    mixed models
   - \[…\]
 
 ## Example

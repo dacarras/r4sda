@@ -2,7 +2,7 @@
 % Please edit documentation in R/stack_resp.R
 \name{stack_resp}
 \alias{stack_resp}
-\title{stack_resp() produces a frequency table in percentages where items are rows, responses are attributes of items, and percentages are presented for each response.}
+\title{stack_resp() produces a frequency table with percentages where items are rows, responses are attributes of items, and percentages are presented for each response.}
 \usage{
 stack_resp(x)
 }
@@ -13,7 +13,7 @@ stack_resp(x)
 data frame with a frequency table
 }
 \description{
-stack_resp() produces a frequency table in percentages where items are rows, responses are attributes of items, and percentages are presented for each response.
+stack_resp() produces a frequency table with percentages where items are rows, responses are attributes of items, and percentages are presented for each response.
 }
 \examples{
 stack_resp(items_data)

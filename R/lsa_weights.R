@@ -7,18 +7,18 @@
 #' @param wt observations final weight
 #' @param wi observations weigth within the primary sampling unit (i.e. students eight within the school)
 #' @param wj cluster weights (i.e. school weights)
-#' 
+#'
 #' @return the original data frame with the new weights at the end, where `wa1` nad `wa2` are level 1 and level 2 normalized weights; `wb1` nad `wb2` are level 1 and level 2 effectives sample weights.
 #' @export
-#' 
-#' @details a collection of mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
+#'
+#' @details a collection of dplyr::mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
 #'
 #' @examples
 #' library(dplyr)
 #' data_frame_with_weights <- lsa_weights(data_frame)
 lsa_weights <- function(data, id_i, id_j, id_k, wt, wi, wj){
 
-# create data frame to produce weights 
+# create data frame to produce weights
 data_frame  <- data.frame(
             id_i = as.numeric(data[[id_i]]),
             id_j = as.numeric(data[[id_j]]),
@@ -32,14 +32,14 @@ require(dplyr)
 data_weights  <- data_frame %>%
 ## method 2: normalized weights
             mutate(w   = wt)                             %>% # [01]
-            mutate(w_sq  = wt^2)                         %>% # [02] 
-            mutate(sum_w = ave(w, id_j, FUN = sum))      %>% # [03] 
-            mutate(sum_wsq = ave(w_sq, id_j, FUN = sum)) %>% # [04] 
-            mutate(wa1 = (w*sum_w)/sum_wsq)              %>% # [05] 
-            mutate(wwa1   = wa1*wj)                      %>% # [06] 
+            mutate(w_sq  = wt^2)                         %>% # [02]
+            mutate(sum_w = ave(w, id_j, FUN = sum))      %>% # [03]
+            mutate(sum_wsq = ave(w_sq, id_j, FUN = sum)) %>% # [04]
+            mutate(wa1 = (w*sum_w)/sum_wsq)              %>% # [05]
+            mutate(wwa1   = wa1*wj)                      %>% # [06]
             mutate(awww1  = ave(wwa1, id_k))             %>% # [07] see notes
-            mutate(wa2 = wj/awww1)                       %>% # [08] 
-## method 1: effective sample size 
+            mutate(wa2 = wj/awww1)                       %>% # [08]
+## method 1: effective sample size
             group_by(id_j) %>% mutate(nj = n()) %>% ungroup() %>% # [09]
             mutate(wb1 = w*nj/sum_w)                          %>% # [10]
             mutate(wwb1 = wb1*wj)                             %>% # [11]
@@ -65,7 +65,7 @@ data_output <- dplyr::bind_cols(data, data_weights)
 # [07] fixed mean of previous term (adapted for multiple country and single country datasets)
 # [08] normalized between weights
 
-## method 1: effective sample size 
+## method 1: effective sample size
 
 # [09] count of cases per cluster
 # [10] effective sample size within weight
@@ -73,17 +73,17 @@ data_output <- dplyr::bind_cols(data, data_weights)
 # [12] fixed mean of previous term (adapted for multiple country and single country datasets)
 # [13] effective sample size between weight
 
-# Sources: 
+# Sources:
 #
-# Rabe-Hesketh, S., & Skrondal, A. (2006). 
-#   Multilevel modelling of complex survey data. 
-#   Journal of the Royal Statistical Society. 
-#   Series A: Statistics in Society, 169(4), 805–827. 
+# Rabe-Hesketh, S., & Skrondal, A. (2006).
+#   Multilevel modelling of complex survey data.
+#   Journal of the Royal Statistical Society.
+#   Series A: Statistics in Society, 169(4), 805–827.
 #   https://doi.org/10.1111/j.1467-985X.2006.00426.x
 
-# Snijders, T. A. B., & Bosker, R. J. (2012). 
-#   Multilevel analysis: an introduction to 
-#   basic and advanced multilevel modeling (2nd ed.). 
+# Snijders, T. A. B., & Bosker, R. J. (2012).
+#   Multilevel analysis: an introduction to
+#   basic and advanced multilevel modeling (2nd ed.).
 #   London: SAGE Publications Ltd.
 
 #        Specially equations 14.19, page 232

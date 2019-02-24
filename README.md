@@ -3,13 +3,14 @@
 
 # r4sda
 
-  - The goal of r4sda is to make it easier when working with large scale
+  - The goal of r4sda is to make it easier to work with large scale
     assessment studies data.
   - Is a collection of wrapper functions, mainly, generated to resolve
-    common tasks I often do when working with large scale assessment
-    data.
-  - It generates tables, variables tables, checks for nested data
-    \[pending\], merge functions \[pending\]
+    common tasks when working with large scale assessment data, analysis
+    of secondary data from large national records, and nested data
+    observations
+  - It generates tables, variables, weights, and other objects to aid
+    large scale assessment data analysis
   - It relies on libraries such as: dplyr, stringr, purrr
 
 # Pendings
@@ -27,7 +28,7 @@
 
 ## Installation
 
-You can install the development version of r4sda from this
+You can install, in R, the development version of r4sda from this
 [github](https://github.com/dacarras/r4sda) repository with:
 
 ``` r

@@ -14,9 +14,16 @@
 
 # Pendings
 
-  - add sample to show functions examples
+  - add sample data to show functions examples
   - add a viggnete
-  - add functions for weights in mixed models (methods a and method b)
+  - add merge function
+  - add checks for nested data (i.e. check if clustering variables are
+    unique across a data frame)
+
+# Done
+
+  - \[x\] add functions for weights in mixed models, methods a and
+    method b, also called normalized and effective sample size weights
 
 ## Installation
 
@@ -37,6 +44,8 @@ devtools::install_github("dacarras/r4sda")
     attributes of items, and the percentage of each response category.
   - `c_mean()` estimate cluster means to aid cluster mean centering in
     mixed models
+  - `lsa_weights()` add normalized and effective sample weights to the
+    provided data frame
   - \[…\]
 
 ## Example

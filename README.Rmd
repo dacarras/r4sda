@@ -22,8 +22,9 @@ knitr::opts_chunk$set(
 
 # Pendings
 
-- add sample to show functions examples
+- add sample data to show functions examples
 - add a viggnete
+- add functions for weights in mixed models (methods a and method b)
 
 ## Installation
 

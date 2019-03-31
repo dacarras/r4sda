@@ -45,6 +45,8 @@ devtools::install_github("dacarras/r4sda")
     attributes of items, and the percentage of each response category.
   - `c_mean()` estimate cluster means to aid cluster mean centering in
     mixed models
+  - `c_sum()` estimate cluster sums to aid cluster variables generation
+    for mixed models
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - \[…\]

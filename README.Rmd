@@ -44,7 +44,9 @@ devtools::install_github("dacarras/r4sda")
 - `wide_var()` generates a table of response as rows, and variablesas columns, and displays the percentage of responses per item.
 - `stack_resp()` generates a table of items as rows, responses as attributes of items, and the percentage of each response category.
 - `c_mean()` estimate cluster means to aid cluster mean centering in mixed models
+- `c_sum()` estimate cluster sums to aid cluster variables generation for mixed models
 - `lsa_weights()` add normalized and effective sample weights to the provided data frame
+- `local_path()` aids the generation of relative working folders, by turning relative locations into a absolute folder paths.
 - [...]
 
 

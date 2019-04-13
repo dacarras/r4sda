@@ -54,7 +54,8 @@ devtools::install_github("dacarras/r4sda")
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - `local_path()` aids the generation of relative working folders, by
-    turning relative locations into a absolute folder paths.
+    turning relative locations into a absolute folder paths. Useful for
+    generaing code that works in Unix and Windows machines.
   - \[…\]
 
 ## Example

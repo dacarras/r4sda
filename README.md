@@ -45,6 +45,8 @@ devtools::install_github("dacarras/r4sda")
     attributes of items, and the percentage of each response category.
   - `c_mean()` estimate cluster means to aid cluster mean centering in
     mixed models
+  - `c_wmean()` estimate cluster means to aid cluster mean centering in
+    mixed models, including weights within clusters
   - `c_sum()` estimate cluster sums to aid cluster variables generation
     for mixed models
   - `reverse()` it generates a reverse score for any given numeric

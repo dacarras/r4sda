@@ -28,7 +28,7 @@ the original data frame with the new weights at the end, where `wa1` nad `wa2` a
 lsa_weights() computes normalized and effective sample size weights for pseudo maximum likelihood mixed models, with large scale assessment data
 }
 \details{
-a collection of mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
+a collection of dplyr::mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
 }
 \examples{
 library(dplyr)

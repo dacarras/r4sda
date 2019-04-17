@@ -1,4 +1,4 @@
-#' zscore() it standardized a continous measure
+#' zscore() it standardized a continous variable
 #'
 #' @param x a numeric vector
 #'
@@ -14,4 +14,3 @@
 zscore <- function(x){
 as.numeric(scale(x, center = TRUE, scale = TRUE))
 }
-

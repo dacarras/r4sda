@@ -2,7 +2,7 @@
 #'
 #' @param x a numeric vector
 #'
-#' @return an standardized variable (in z score)
+#' @return an standardized variable, as a z score
 #' @export
 #'
 #' @examples

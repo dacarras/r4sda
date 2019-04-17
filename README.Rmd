@@ -48,7 +48,7 @@ devtools::install_github("dacarras/r4sda")
     mixed models, including weights within clusters
 - `c_sum()` estimate cluster sums to aid cluster variables generation for mixed models
 - `reverse()` it generates a reverse score for any given numeric vector.
-- `zscore()` it standardize variables, generating z scores
+- `z_score()` it standardize variables, generating z scores
 - `lsa_weights()` add normalized and effective sample weights to the provided data frame
 - `local_path()` aids the generation of relative working folders, by turning relative locations into a absolute folder paths. Useful for generaing code that works in Unix and Windows machines.
 - [...]

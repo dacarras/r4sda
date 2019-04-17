@@ -1,4 +1,4 @@
-#' zscore() it standardized a continous variable
+#' z_score() it standardized a continous variable
 #'
 #' @param x a numeric vector
 #'

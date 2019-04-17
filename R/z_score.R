@@ -11,6 +11,6 @@
 #'               mutate(zcore = zscore(original))
 #' skimr::skim(items_data$zcore)
 #' }
-zscore <- function(x){
+z_score <- function(x){
 as.numeric(scale(x, center = TRUE, scale = TRUE))
 }

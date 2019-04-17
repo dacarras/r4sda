@@ -51,6 +51,7 @@ devtools::install_github("dacarras/r4sda")
     for mixed models
   - `reverse()` it generates a reverse score for any given numeric
     vector.
+  - `zscore()` it standardize variables, generating z scores
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - `local_path()` aids the generation of relative working folders, by

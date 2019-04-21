@@ -4,7 +4,7 @@
 \alias{c_wmean}
 \title{c_wmean() computes the cluster weighted mean for a given variable, and a given clustering variable}
 \usage{
-c_wmean(x, j)
+c_wmean(x, w, j)
 }
 \arguments{
 \item{x}{a numeric vector of a single variable}

@@ -5,7 +5,7 @@
 #'
 #' @return a numeric vector
 #' @export
-#' 
+#'
 #' @details simple wrapper for `ave(variable, group)` function couple with matrixStats::weightedMean(), to estimate cluster means weighted by within cluster weights
 #'
 #' @examples
@@ -15,6 +15,6 @@
 #' select(x, id_j) %>%
 #' unique() %>%
 #' print
-c_wmean <- function(x,j){
-ave(x,j,FUN=function(x) matrixStats::weightedMean(x, na.rm=T))
+c_wmean <- function(x,w,j){
+ave(x,j,FUN=function(x) matrixStats::weightedMean(x, w, na.rm=T))
 }

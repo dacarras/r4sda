@@ -11,10 +11,29 @@
 #' @examples
 #' library(dplyr)
 #' data_frame %>%
-#' mutate(cluster_mean =  c_wmean(x, id_j)) %>%
-#' select(x, id_j) %>%
+#' mutate(cluster_mean =  c_wmean(x, w, id_j)) %>%
+#' select(x, id_j, cluster_mean) %>%
 #' unique() %>%
 #' print
-c_wmean <- function(x,w,j){
-ave(x,j,FUN=function(x) matrixStats::weightedMean(x, w, na.rm=T))
+c_wmean <- function(x,w,j) {
+
+  # required library
+  require(dplyr)
+
+  # generate vectores
+  x = as.numeric(x)
+  w = as.numeric(w)
+  j = as.numeric(j)
+
+  # generate temporal data
+  clustered_data <- data.frame(
+    variable = x,
+    weight   = w,
+    cluster  = j
+  ) %>%
+    group_by(cluster) %>%
+    mutate(wm = matrixStats::weightedMean(variable,weight, na.rm=TRUE))
+
+  # return
+  return(as.numeric(clustered_data$wm))
 }

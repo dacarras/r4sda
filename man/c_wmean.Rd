@@ -23,8 +23,8 @@ simple wrapper for `ave(variable, group)` function couple with matrixStats::weig
 \examples{
 library(dplyr)
 data_frame \%>\%
-mutate(cluster_mean =  c_wmean(x, id_j)) \%>\%
-select(x, id_j) \%>\%
+mutate(cluster_mean =  c_wmean(x, w, id_j)) \%>\%
+select(x, id_j, cluster_mean) \%>\%
 unique() \%>\%
 print
 }

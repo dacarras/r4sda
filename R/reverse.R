@@ -12,7 +12,14 @@
 #' dplyr::count(items_data, original, item)
 #' }
 reverse <- function(var){
+# remove labels
+var <- labelled::remove_labels(var)
+var <- haven::zap_labels(var)	
+
+# get max and min of vector
 max <- max(var, na.rm = TRUE)
 min <- min(var, na.rm = TRUE)
+
+# produced reverse score
 return(max + min - var)
 }

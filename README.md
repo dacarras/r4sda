@@ -15,6 +15,7 @@
 
 # Pendings
 
+  - z\_score is not being exported, fix the latest update (20190416)
   - add sample data to show functions examples
   - add a viggnete
   - add merge function
@@ -50,13 +51,21 @@ devtools::install_github("dacarras/r4sda")
   - `c_sum()` estimate cluster sums to aid cluster variables generation
     for mixed models
   - `reverse()` it generates a reverse score for any given numeric
-    vector.
+    vector (it removes the labels if the variable is labelled).
   - `z_score()` it standardize variables returning these as z scores
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - `local_path()` aids the generation of relative working folders, by
     turning relative locations into a absolute folder paths. Useful for
     generaing code that works in Unix and Windows machines.
+  - `wide_resp()` generates a table of items as rows, and response value
+    as columns, and displays the percentage of responses per item.
+  - `variable_label()` it gets variable labels from a variable, from
+    labelled vector.
+  - `value_label()` it generate a table from the value labels from a
+    labelled vector.
+  - `variables_table()` generates a table of a data frame, including
+    variable names, variable types, sample values, and variable labels
   - \[…\]
 
 ## Example

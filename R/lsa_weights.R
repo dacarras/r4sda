@@ -15,7 +15,15 @@
 #'
 #' @examples
 #' library(dplyr)
-#' data_frame_with_weights <- lsa_weights(data_frame)
+#' data_frame_with_weights <- data_frame %>%
+#'                            r4sda::lsa_weights(., 
+#'                              id_i = 'id_i', 
+#'                              id_j = 'id_j', 
+#'                              id_k = 'id_k', 
+#'                              wt = 'wt', 
+#'                              wi = 'wi', 
+#'                              wj = 'wj' ) 
+#' 
 lsa_weights <- function(data, id_i, id_j, id_k, wt, wi, wj){
 
 # create data frame to produce weights

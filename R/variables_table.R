@@ -36,7 +36,7 @@ variables_table <- function(d){
 
   ## create variable list table
   variable_list <- tibble::tibble(
-      variables = variable_names,
+      variable  = variable_names,
       type      = variable_type,
       values    = sample_values,
       labels    = labels_values,

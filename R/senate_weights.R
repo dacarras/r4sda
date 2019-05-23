@@ -1,4 +1,4 @@
-#' lsa_weights() computes normalized and effective sample size weights for pseudo maximum likelihood mixed models, with large scale assessment data
+#' senate_weights() computes senate weights. These weights are used often to include more than one country with different sample size, yet to scale their weight to a common total.
 #'
 #' @param data data frame object which contains the rest of the arguments
 #' @param wt observations final weight

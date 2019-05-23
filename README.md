@@ -55,6 +55,8 @@ devtools::install_github("dacarras/r4sda")
   - `z_score()` it standardize variables returning these as z scores
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
+  - `senate_weights()` add senate weights scaled up a to a number
+    (e.g. 500, 1000 or else)
   - `local_path()` aids the generation of relative working folders, by
     turning relative locations into a absolute folder paths. Useful for
     generaing code that works in Unix and Windows machines.

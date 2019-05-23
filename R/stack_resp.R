@@ -33,6 +33,7 @@ table <-  lapply(x, table_freq) %>%
           dplyr::bind_rows(., .id = 'var') %>%
           rename(resp = x, n = Freq) %>%
           group_by(var) %>% 
+          mutate(per = n/sum(n)) %>%
           mutate(resp = as.character(resp)) %>%
           mutate(resp = na_if(resp, -999)) %>%
           mutate(resp = as.numeric(resp)) %>%

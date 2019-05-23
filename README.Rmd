@@ -51,6 +51,7 @@ devtools::install_github("dacarras/r4sda")
 - `reverse()` it generates a reverse score for any given numeric vector (it removes the labels if the variable is labelled).
 - `z_score()` it standardize variables returning these as z scores
 - `lsa_weights()` add normalized and effective sample weights to the provided data frame
+- `senate_weights()` add senate weights scaled up a to a number (e.g. 500, 1000 or else)
 - `local_path()` aids the generation of relative working folders, by turning relative locations into a absolute folder paths. Useful for generaing code that works in Unix and Windows machines.
 - `wide_resp()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per item.
 - `variable_label()` it gets variable labels from a variable, from labelled vector.

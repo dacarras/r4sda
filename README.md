@@ -57,6 +57,8 @@ devtools::install_github("dacarras/r4sda")
     provided data frame
   - `senate_weights()` add senate weights scaled up a to a number
     (e.g. 500, 1000 or else)
+  - `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study
+    data frame
   - `local_path()` aids the generation of relative working folders, by
     turning relative locations into a absolute folder paths. Useful for
     generaing code that works in Unix and Windows machines.

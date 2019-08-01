@@ -2,7 +2,7 @@
 % Please edit documentation in R/senate_weights.R
 \name{senate_weights}
 \alias{senate_weights}
-\title{lsa_weights() computes normalized and effective sample size weights for pseudo maximum likelihood mixed models, with large scale assessment data}
+\title{senate_weights() computes senate weights. These weights are used often to include more than one country with different sample size, yet to scale their weight to a common total.}
 \usage{
 senate_weights(data, wt, scale, id_k)
 }
@@ -19,7 +19,7 @@ senate_weights(data, wt, scale, id_k)
 the original data frame with the new senate weights at the end, 'ws'
 }
 \description{
-lsa_weights() computes normalized and effective sample size weights for pseudo maximum likelihood mixed models, with large scale assessment data
+senate_weights() computes senate weights. These weights are used often to include more than one country with different sample size, yet to scale their weight to a common total.
 }
 \details{
 a collection of dplyr::mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)

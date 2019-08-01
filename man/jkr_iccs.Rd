@@ -24,7 +24,7 @@ the original data frame with the jacknnifes replicates added.
 jkr_iccs() computes jackknifes for ICCS 2009 and ICCS 2016
 }
 \details{
-a loop function to create jacknife replicate weights (author: `merivera@uc.cl`)
+a loop function to create jackknifes replicate weights (author: `merivera@uc.cl`)
 }
 \examples{
 library(dplyr)

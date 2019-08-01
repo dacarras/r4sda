@@ -9,7 +9,7 @@
 #' @return the original data frame with the jacknnifes replicates added.
 #' @export
 #'
-#' @details a loop function to create jacknife replicate weights (author: `merivera@uc.cl`)
+#' @details a loop function to create jackknifes replicate weights (author: `merivera@uc.cl`)
 #'
 #' @examples
 #' library(dplyr)

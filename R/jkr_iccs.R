@@ -1,4 +1,4 @@
-#' jackknifes_iccs() computes jackknifes for ICCS 2009 and ICCS 2016
+#' jkr_iccs() computes jackknifes for ICCS 2009 and ICCS 2016
 #'
 #' @param data data frame object which contains the rest of the arguments
 #' @param nrep number of replicates
@@ -21,7 +21,7 @@
 #'                               jki = 'JKREPS',
 #'                               wgt = 'TOTWGTS')
 #'
-jackknifes_iccs <-function(data, nrep, jkz, jki, wgt){
+jkr_iccs <-function(data, nrep, jkz, jki, wgt){
 
   # data = dataframe
   # nrep = number of repetions (numeric)

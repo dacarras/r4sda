@@ -26,7 +26,7 @@ c_wmean <- function(data, x,w,j) {
     j = data[[rlang::quo_name(enquo(j))]]
   ) %>%
     group_by(j) %>%
-    mutate(wm = matrixStats::weightedMean(x, w, na.rm=TRUE)) %>%
+    mutate(wm = matrixStats::weightedMean(x, w, na.rm=FALSE)) %>%
     ungroup()
 
   return(as.numeric(data_frame$wm))

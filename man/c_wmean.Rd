@@ -4,11 +4,9 @@
 \alias{c_wmean}
 \title{c_wmean() computes the cluster weighted mean for a given variable, and a given clustering variable}
 \usage{
-c_wmean(data, x, w, j)
+c_wmean(x, w, j)
 }
 \arguments{
-\item{data}{a data frame where the variables are contained}
-
 \item{x}{a numeric vector of a single variable}
 
 \item{w}{a numeric vector for within cluster weights}
@@ -22,12 +20,12 @@ a numeric vector
 c_wmean() computes the cluster weighted mean for a given variable, and a given clustering variable
 }
 \details{
-simple wrapper for  with matrixStats::weightedMean(), to estimate cluster means weighted by within cluster weights
+simple wrapper for  ave(x,j), to estimate cluster means weighted by within cluster weights
 }
 \examples{
 library(dplyr)
 data_frame \%>\%
-mutate(cluster_mean =  c_wmean(., 'x', 'w', 'id_j')) \%>\%
+mutate(cluster_mean =  c_wmean(x, w, id_j)) \%>\%
 select(x, id_j, cluster_mean) \%>\%
 unique() \%>\%
 print

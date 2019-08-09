@@ -16,4 +16,5 @@
 #'
 mean_score = function(..., na.rm=TRUE){
 rowMeans(cbind(...), na.rm=na.rm)
+# source: https://stackoverflow.com/questions/33401788/dplyr-using-mutate-like-rowmeans
 }

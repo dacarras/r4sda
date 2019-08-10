@@ -15,18 +15,16 @@ knitr::opts_chunk$set(
 # r4sda
 
 - The goal of r4sda is to make it easier to work with large scale assessment studies data.
-- Is a collection of wrapper functions, mainly, generated to resolve common tasks when working with large scale assessment data, analysis of secondary data from large national records, and nested data observations
+- Is a collection of simple, wrapper functions, mainly, generated to resolve common tasks when working with large scale assessment data, analysis of secondary data from large national records, and nested data observations
 - It generates tables, variables, weights, and other objects to aid large scale assessment data analysis
 - It relies on libraries such as: dplyr, stringr, purrr
 
 
 # Pendings
 
-- z_score is not being exported, fix the latest update (20190416)
 - add sample data to show functions examples
 - add a viggnete
 - add merge function
-- add checks for nested data (i.e. check if clustering variables are unique across a data frame)
 
 # Done
 - [x] add functions for weights in mixed models, methods a and method b, also called normalized and effective sample size weights
@@ -59,6 +57,7 @@ devtools::install_github("dacarras/r4sda")
 - `variable_label()` it gets variable labels from a variable, from labelled vector.
 - `value_label()` it generate a table from the value labels from a labelled vector.
 - `variables_table()` generates a table of a data frame, including variable names, variable types, sample values, and variable labels
+- `check_cluster_id()` it tests if the cluster id is unique across the data frame, or if these repeats between addtional cluster factors. For example, schools id that repeats between countries.
 - [...]
 
 

@@ -21,8 +21,10 @@
 
 # Done
 
-  - \[x\] add functions for weights in mixed models, methods a and
-    method b, also called normalized and effective sample size weights
+  - add functions for weights in mixed models, methods a and method b,
+    also called normalized and effective sample size weights
+  - add mean score within observations
+  - add check cluster id function
 
 ## Installation
 

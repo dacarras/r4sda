@@ -5,22 +5,19 @@
 
   - The goal of r4sda is to make it easier to work with large scale
     assessment studies data.
-  - Is a collection of wrapper functions, mainly, generated to resolve
-    common tasks when working with large scale assessment data, analysis
-    of secondary data from large national records, and nested data
-    observations
+  - Is a collection of simple, wrapper functions, mainly, generated to
+    resolve common tasks when working with large scale assessment data,
+    analysis of secondary data from large national records, and nested
+    data observations
   - It generates tables, variables, weights, and other objects to aid
     large scale assessment data analysis
   - It relies on libraries such as: dplyr, stringr, purrr
 
 # Pendings
 
-  - z\_score is not being exported, fix the latest update (20190416)
   - add sample data to show functions examples
   - add a viggnete
   - add merge function
-  - add checks for nested data (i.e. check if clustering variables are
-    unique across a data frame)
 
 # Done
 
@@ -53,6 +50,8 @@ devtools::install_github("dacarras/r4sda")
   - `reverse()` it generates a reverse score for any given numeric
     vector (it removes the labels if the variable is labelled).
   - `z_score()` it standardize variables returning these as z scores
+  - `mean_score()` it create mean score of variable (i.e. row wise
+    means)
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - `senate_weights()` add senate weights scaled up a to a number
@@ -70,6 +69,9 @@ devtools::install_github("dacarras/r4sda")
     labelled vector.
   - `variables_table()` generates a table of a data frame, including
     variable names, variable types, sample values, and variable labels
+  - `check_cluster_id()` it tests if the cluster id is unique across the
+    data frame, or if these repeats between addtional cluster factors.
+    For example, schools id that repeats between countries.
   - \[…\]
 
 ## Example

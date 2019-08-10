@@ -71,7 +71,8 @@ devtools::install_github("dacarras/r4sda")
     variable names, variable types, sample values, and variable labels
   - `check_cluster_id()` it tests if the cluster id is unique across the
     data frame, or if these repeats between addtional cluster factors.
-    For example, schools id that repeats between countries.
+    For example, it checks if schools id repeats between country
+    observations, or if observations id are unique between schools.
   - \[…\]
 
 ## Example

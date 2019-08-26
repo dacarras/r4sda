@@ -13,11 +13,11 @@
 #' @examples
 #' library(dplyr)
 #' data_frame_with_weights <- data_frame %>%
-#'                            r4sda::lsa_weights(.,
-#'                              scale = 1000,
-#'                              wt = 'wt'
-#'                              id_k = 'id_k')
-#' 
+#'                            r4sda::senate_weights(.,
+#'                            scale = 1000,
+#'                            wt = 'wt',
+#'                            id_k = 'id_k')
+#'
 senate_weights <- function(data, wt, scale, id_k){
 
 # libraries
@@ -48,20 +48,20 @@ data_output <- dplyr::bind_cols(data, data_weights)
 
 # How to create a senate weight
 
-# 1. Select the constant to which the sum of 
+# 1. Select the constant to which the sum of
 #    the weights will be rescaled (in our example, “K”).
 
-# 2. Compute the sum of the sampling weights within each 
+# 2. Compute the sum of the sampling weights within each
 #    of the groups within which the rescaling will be done.
 
-# 3. Multiply the sample weights by the result of dividing 
-#    the constant selected in Step 1 above by the sum of 
+# 3. Multiply the sample weights by the result of dividing
+#    the constant selected in Step 1 above by the sum of
 #    the weights in Step 2.
 
 # SOURCE:
-# Gonzalez, E. J. (2012). Rescaling sampling weights and selecting 
-#      mini-samples from large-scale assessment databases. 
-#      IERI Monograph Series Issues and Methodologies in 
+# Gonzalez, E. J. (2012). Rescaling sampling weights and selecting
+#      mini-samples from large-scale assessment databases.
+#      IERI Monograph Series Issues and Methodologies in
 #       Large-Scale Assessments, 5, 115–134.
 
 

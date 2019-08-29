@@ -11,12 +11,7 @@
     data observations
   - It generates tables, variables, weights, and other objects to aid
     large scale assessment data analysis
-  - It relies on libraries such as: dplyr, stringr,
-    purrr
-
-# CIIE Workshop 2009 material in spanish\!
-
-  - [link](https://www.dropbox.com/sh/c3sradzk8z9p17g/AAClGpVMQvvtH6RYT3Zt_ZPQa?dl=1)
+  - It relies on libraries such as: dplyr, stringr, purrr
 
 # Pendings
 

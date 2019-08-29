@@ -11,7 +11,7 @@
     data observations
   - It generates tables, variables, weights, and other objects to aid
     large scale assessment data analysis
-  - It relies on libraries such as: dplyr, stringr, purrr
+  - It relies on libraries such as: dplyr, stringr, purrr among others
 
 # Pendings
 
@@ -111,8 +111,6 @@ r4sda::wide_resp(items_data)
 ```
 
 Because this is a table, it can be render as kable table:
-
-You can also embed plots, for example:
 
 ``` text
 knitr::kable(wide_resp(items_data), digits = 2)

@@ -54,6 +54,7 @@ devtools::install_github("dacarras/r4sda")
   - `z_score()` it standardize variables returning these as z scores
   - `mean_score()` it create mean score of variable (i.e. row wise
     means)
+  - `sum_score()` it create sum score of variables (i.e. row wise sum)
   - `lsa_weights()` add normalized and effective sample weights to the
     provided data frame
   - `senate_weights()` add senate weights scaled up a to a number

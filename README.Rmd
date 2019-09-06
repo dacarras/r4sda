@@ -52,6 +52,7 @@ devtools::install_github("dacarras/r4sda")
 - `reverse()` it generates a reverse score for any given numeric vector (it removes the labels if the variable is labelled).
 - `z_score()` it standardize variables returning these as z scores
 - `mean_score()` it create mean score of variable (i.e. row wise means)
+- `sum_score()` it create sum score of variables (i.e. row wise sum)
 - `lsa_weights()` add normalized and effective sample weights to the provided data frame
 - `senate_weights()` add senate weights scaled up a to a number (e.g. 500, 1000 or else)
 - `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study data frame

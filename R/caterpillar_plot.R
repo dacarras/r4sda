@@ -33,7 +33,7 @@ caterpillar_plot <- function(mlm_model){
     dplyr::select(id_j, u_j,ll, ul)
 
   ## get icc
-  var_com <- broom.mixed::tidy(null_model) %>%
+  var_com <- broom.mixed::tidy(mlm_model) %>%
     dplyr::filter(effect == 'ran_pars') %>%
     dplyr::mutate(var = estimate^2) %>%
     dplyr::mutate(per = var/sum(var))

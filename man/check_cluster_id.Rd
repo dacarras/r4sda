@@ -4,7 +4,7 @@
 \alias{check_cluster_id}
 \title{z_score() it standardized a continous variable}
 \usage{
-check_cluster_id(data, id_j, id_k)
+check_cluster_id(data, cluster_1, cluster_2)
 }
 \arguments{
 \item{x}{a numeric vector}

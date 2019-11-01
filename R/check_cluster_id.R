@@ -33,8 +33,8 @@ check_cluster_id <- function(data, cluster_1, cluster_2){
   counter_2 <- nrow(dplyr::count(data_clustered, cluster_1, cluster_2))
 
   # extract cluster variable names
-  cluster_1_name <- as.character(id_j)
-  cluster_2_name <- as.character(id_k)
+  cluster_1_name <- as.character(cluster_1)
+  cluster_2_name <- as.character(cluster_2)
 
   # test
   return(dplyr::if_else(counter_1 == counter_2,

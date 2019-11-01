@@ -82,6 +82,9 @@ devtools::install_github("dacarras/r4sda")
     lenght, among other customizations. It was develop to visually
     inspect random intercept spreadings, for unconditioned and
     conditioned models.
+  - `remove_labels()` it remove labels from a data frame. It aids the
+    use of data frame for other packages and software that needs plain
+    data for their use.
   - \[…\]
 
 ## Example

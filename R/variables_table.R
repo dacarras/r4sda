@@ -26,9 +26,11 @@ variables_table <- function(d){
   variable_type  <- stringr::str_sub(text_lines,
     start=char_location(text_lines,'<')+1,
     end=char_location(text_lines,'>')-1)
-  sample_values  <- as.character(stringr::str_sub(text_lines,
-                                                  start=51,
-                                                  end=120))
+  sample_values  <- as.character(
+    stringr::str_sub(text_lines,
+                     start=51,
+                     end=120)
+  )
   labels_values  <- as.character(purrr::map_dfr(d, variable_label)[1,])
 
   ## NOTE: start and end figures need to be determined beforehand. The current values

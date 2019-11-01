@@ -13,14 +13,14 @@
 #'   id_j = 'schools',
 #'   id_k = 'country')
 #' }
-check_cluster_id <- function(data, id_j, id_k){
+check_cluster_id <- function(data, cluster_1, cluster_2){
   # libraries we need
   require(dplyr)
 
   # create temp data out of the clustered variables
   data_clustered  <- data.frame(
-    cluster_1 = as.numeric(data[[id_j]]),
-    cluster_2 = as.numeric(data[[id_k]])
+    cluster_1 = as.numeric(data[[cluster_1]]),
+    cluster_2 = as.numeric(data[[cluster_2]])
   )
 
   # check if id_j is unique (e.g. where schools id are id_j)

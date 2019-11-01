@@ -14,7 +14,7 @@ variables_table <- function(d){
   require(dplyr)
   require(purrr)
   require(stringr)
-  
+
   ## get main objects
   var_structure <- capture.output(dplyr::glimpse(d))
   text_lines    <- var_structure[-(1:2)]
@@ -23,11 +23,11 @@ variables_table <- function(d){
   variable_names <- names(purrr::map_dfr(d, variable_label))
 
   ## these needs to be specific
-  variable_type  <- stringr::str_sub(text_lines, 
-    start=char_location(text_lines,'<')+1, 
-    end=char_location(text_lines,'>')-1) 
-  sample_values  <- stringr::str_sub(text_lines, 
-    start=char_location(text_lines,'>')+2, 
+  variable_type  <- stringr::str_sub(text_lines,
+    start=char_location(text_lines,'<')+1,
+    end=char_location(text_lines,'>')-1)
+  sample_values  <- stringr::str_sub(text_lines,
+    start=char_location(text_lines,'>')+4,
     end=char_location(text_lines,'>')+42)
   labels_values  <- as.character(purrr::map_dfr(d, variable_label)[1,])
 

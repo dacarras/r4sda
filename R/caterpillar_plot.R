@@ -55,7 +55,7 @@ caterpillar_plot <- function(mlm_model){
     theme(panel.background = element_rect(fill = "white", colour = "grey50"))+
     theme(panel.grid.major.y = element_line(size = .05, colour = "grey50")) +
     theme(panel.grid.minor.y = element_line(size = .05, colour = "grey50")) +
-    xlab('cluster') +
+    xlab('cluster ranking') +
     ylab('random effect') +
     annotate('text',
              # positions the ICC at the first fifth of the rank the clusters

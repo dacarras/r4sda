@@ -47,9 +47,8 @@ caterpillar_plot <- function(mlm_model){
     # ylim(c(-200,200)) +
     # coord_fixed(ratio=.2) +
     # coord_flip()+
-    theme(axis.text.y = element_text(size=6)) +
     theme(plot.title = element_text(hjust = 0.5)) +
-    theme(axis.text.y = element_text(size=06, colour = "grey50")) +
+    theme(axis.text.y = element_text(size=6, colour = "grey50")) +
     theme(axis.text.x = element_blank()) +
     theme(axis.ticks = element_blank())+
     theme(panel.background = element_rect(fill = "white", colour = "grey50"))+

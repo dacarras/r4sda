@@ -56,17 +56,13 @@ caterpillar_mean_plot <- function(mlm_model){
     # coord_fixed(ratio=.2) +
     # coord_flip()+
     theme(
-    plot.title = element_text(hjust = 0.5),
-    axis.text.y = element_text(size= 10, colour = "grey50"),
-    axis.text.x = element_blank(),
-    axis.ticks = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.border = element_rect(linetype = "solid", fill = NA, colour = 'grey30'),
-    panel.background = element_rect(fill = "white", colour = "grey50")
-    ) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    theme(axis.text.y = element_text(size=6, colour = "grey50")) +
+    theme(axis.text.x = element_blank()) +
+    theme(axis.ticks = element_blank())+
+    theme(panel.background = element_rect(fill = "white", colour = "grey50"))+
+    theme(panel.grid.major.y = element_line(size = .05, colour = "grey50")) +
+    theme(panel.grid.minor.y = element_line(size = .05, colour = "grey50")) +
     xlab('cluster ranking') +
     ylab('latent means') +
     annotate('text',

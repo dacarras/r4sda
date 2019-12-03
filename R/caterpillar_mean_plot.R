@@ -50,8 +50,8 @@ caterpillar_mean_plot <- function(mlm_model){
 
   ## plot function
   p <- ggplot(rand_intercept, aes(x=reorder(id_j,u_j), y=u_j, ymin=ll, ymax=ul))+
-    geom_pointrange(colour='grey20', alpha = .20, size = .2)+
-    geom_hline(yintercept = intercept, linetype=2, size = .25, colour = "grey50")+
+    geom_pointrange(colour='grey20', alpha = .25, size = .2)+
+    geom_hline(yintercept = .00, linetype=2, size = .25, colour = "grey50") +
     # ylim(c(-200,200)) +
     # coord_fixed(ratio=.2) +
     # coord_flip()+

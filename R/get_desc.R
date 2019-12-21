@@ -1,4 +1,4 @@
-#' get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values
+#' get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values. its largely based on the deprecated function skimr::skim_to_wide
 #'
 #' @param x a data frame, where rows = observations, and columns = variables
 #'

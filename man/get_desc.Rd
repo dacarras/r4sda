@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_desc.R
 \name{get_desc}
 \alias{get_desc}
-\title{get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values}
+\title{get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values. its largely based on the deprecated function skimr::skim_to_wide}
 \usage{
 get_desc(x)
 }
@@ -13,7 +13,7 @@ get_desc(x)
 data frame with with descriptive values
 }
 \description{
-get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values
+get_desc() produces a table with descriptives where items or variables are rows and columns are differerent descriptive values. its largely based on the deprecated function skimr::skim_to_wide
 }
 \examples{
 get_desc(items_data)

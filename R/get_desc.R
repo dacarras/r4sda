@@ -12,6 +12,11 @@
 #' get_desc(items_data)
 #' }
 get_desc <- function(x){
+# remove warnings
+options(warn=-1)
+
+# load dplyr
+require(dplyr)
 
   # histograms
   get_hist <- function(x){
@@ -161,4 +166,5 @@ get_desc <- function(x){
     dplyr::left_join(.,get_max(x), by = 'var') %>%
     dplyr::left_join(.,get_hist(x), by = 'var')
   return(wide_table)
+options(warn=0)
 }

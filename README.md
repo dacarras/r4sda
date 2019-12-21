@@ -74,6 +74,7 @@ devtools::install_github("dacarras/r4sda")
     variable names, variable types, sample values, and variable labels
   - `get_icc()` it estimates the Intra class correlation of an MLM model
     from lme4.
+  - `get_desc()` it produces a table with descriptives.
   - `check_cluster_id()` it tests if the cluster id is unique across the
     data frame, or if these repeats between addtional cluster factors.
     For example, it checks if schools id repeats between country

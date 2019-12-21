@@ -33,7 +33,6 @@ require(dplyr)
     return(hist_table)
   }
 
-
   # minimum
   get_min <- function(x){
     wide_table <- x %>%

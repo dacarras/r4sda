@@ -1,4 +1,4 @@
-#' z_score() it standardized a continous variable
+#' check_cluster_id() checks if cluster id variable is unique a cross other nested variables. It was designed to assess if schools id are unique countries, and if strata id are unique across countries and regions.
 #'
 #' @param x a numeric vector
 #'

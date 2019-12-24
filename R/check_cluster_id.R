@@ -1,8 +1,10 @@
 #' check_cluster_id() checks if cluster id variable is unique a cross other nested variables. It was designed to assess if schools id are unique countries, and if strata id are unique across countries and regions.
 #'
-#' @param x a numeric vector
+#' @param data a data frame with nested observations
+#' @param cluster_1 the cluster id one's wants to check over a hierachical cluster (i.e. schools within countries)
+#' @param cluster_2 the cluster id which contains the checked cluster (i.e. countries that contains schools)
 #'
-#' @return an standardized variable, as a z score
+#' @return a logical message
 #' @export
 #'
 #' @examples

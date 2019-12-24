@@ -17,7 +17,7 @@ wide_var() produces a frequency table with percentages where responses are rows,
 }
 \examples{
 wide_var(items_data)
-\\donotrun{
+\donotrun{
 items_data <- dplyr::select(data_frame, item_1:item_9)
 wide_var(items_data)
 }

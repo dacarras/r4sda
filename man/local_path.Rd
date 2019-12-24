@@ -17,7 +17,7 @@ local_path() turns a relative directory into a absolute directory. It aids the g
 }
 \examples{
 working_directory <- local_path(getwd())
-\\donotrun{
+\donotrun{
 working_directory <- local_path(getwd())
 working_directory # this is the current working directory
 }

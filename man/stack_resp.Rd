@@ -17,7 +17,7 @@ stack_resp() produces a frequency table with percentages where items are rows, r
 }
 \examples{
 stack_resp(items_data)
-\\donotrun{
+\donotrun{
 items_data <- dplyr::select(data_frame, item_1:item_9)
 stack_resp(items_data)
 }

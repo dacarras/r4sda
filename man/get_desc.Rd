@@ -17,7 +17,7 @@ get_desc() produces a table with descriptives where items or variables are rows 
 }
 \examples{
 get_desc(items_data)
-\\donotrun{
+\donotrun{
 items_data <- dplyr::select(data_frame, item_1:item_9)
 get_desc(items_data)
 }

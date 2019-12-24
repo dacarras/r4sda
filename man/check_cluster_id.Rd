@@ -2,21 +2,25 @@
 % Please edit documentation in R/check_cluster_id.R
 \name{check_cluster_id}
 \alias{check_cluster_id}
-\title{z_score() it standardized a continous variable}
+\title{check_cluster_id() checks if cluster id variable is unique a cross other nested variables. It was designed to assess if schools id are unique countries, and if strata id are unique across countries and regions.}
 \usage{
 check_cluster_id(data, cluster_1, cluster_2)
 }
 \arguments{
-\item{x}{a numeric vector}
+\item{data}{a data frame with nested observations}
+
+\item{cluster_1}{the cluster id one's wants to check over a hierachical cluster (i.e. schools within countries)}
+
+\item{cluster_2}{the cluster id which contains the checked cluster (i.e. countries that contains schools)}
 }
 \value{
-an standardized variable, as a z score
+a logical message
 }
 \description{
-z_score() it standardized a continous variable
+check_cluster_id() checks if cluster id variable is unique a cross other nested variables. It was designed to assess if schools id are unique countries, and if strata id are unique across countries and regions.
 }
 \examples{
-\\donotrun{
+\donotrun{
 
 data_example \%>\%
 check_cluster_id(

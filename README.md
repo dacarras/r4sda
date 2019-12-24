@@ -1,6 +1,4 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # r4sda
 
   - The goal of r4sda is to make it easier to work with data from large

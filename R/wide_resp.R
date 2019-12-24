@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' wide_resp(items_data)
-#' \donotrun{
+#'
+#'
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
 #' wide_resp(items_data)
-#' }
+#'
 wide_resp <- function(x){
   # remove warnings
   options(warn=-1)

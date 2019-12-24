@@ -16,9 +16,9 @@ an absolute route or logical directory for the current machine
 local_path() turns a relative directory into a absolute directory. It aids the generation of relative directory to store all code in single folder, and then reproduce the calculations in a Mac OS machine or a Windows machine, or else. Is simple wrapper for `tools::file_path_as_absolute(x)`, to which it adds a final `/`.
 }
 \examples{
-working_directory <- local_path(getwd())
-\donotrun{
+
+
 working_directory <- local_path(getwd())
 working_directory # this is the current working directory
-}
+
 }

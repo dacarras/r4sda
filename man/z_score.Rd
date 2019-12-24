@@ -16,9 +16,9 @@ an standardized variable, as a z score
 z_score() it standardized a continous variable
 }
 \examples{
-\donotrun{
+
 items_data <- items_data \%>\%
               mutate(zcore = zscore(original))
 skimr::skim(items_data$zcore)
-}
+
 }

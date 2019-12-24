@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' get_desc(items_data)
-#' \donotrun{
+#'
+#'
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
 #' get_desc(items_data)
-#' }
+#'
 get_desc <- function(x){
 # remove warnings
 options(warn=-1)

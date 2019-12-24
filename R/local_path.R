@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' working_directory <- local_path(getwd())
-#' \donotrun{
+#'
+#'
 #' working_directory <- local_path(getwd())
 #' working_directory # this is the current working directory
-#' }
+#'
 local_path <- function(x){
-paste0(tools::file_path_as_absolute(x),'/')  
+paste0(tools::file_path_as_absolute(x),'/')
 }

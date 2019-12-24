@@ -16,9 +16,9 @@ data frame with a frequency table
 wide_resp() produces a frequency table in percentages where items are rows and columns are response values
 }
 \examples{
-wide_resp(items_data)
-\donotrun{
+
+
 items_data <- dplyr::select(data_frame, item_1:item_9)
 wide_resp(items_data)
-}
+
 }

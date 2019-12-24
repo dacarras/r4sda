@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' stack_resp(items_data)
-#' \donotrun{
+#'
+#'
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
 #' stack_resp(items_data)
-#' }
+#'
 stack_resp <- function(x){
 # remove warnings
 options(warn=-1)
@@ -32,7 +32,7 @@ as.data.frame(table(x))
 table <-  lapply(x, table_freq) %>%
           dplyr::bind_rows(., .id = 'var') %>%
           rename(resp = x, n = Freq) %>%
-          group_by(var) %>% 
+          group_by(var) %>%
           mutate(per = n/sum(n)) %>%
           mutate(resp = as.character(resp)) %>%
           mutate(resp = na_if(resp, -999)) %>%

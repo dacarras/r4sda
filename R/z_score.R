@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' \donotrun{
+#'
 #' items_data <- items_data %>%
 #'               mutate(zcore = zscore(original))
 #' skimr::skim(items_data$zcore)
-#' }
+#'
 z_score <- function(x){
 return(as.numeric(scale(x, center = TRUE, scale = TRUE)))
 }

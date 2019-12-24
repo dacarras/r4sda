@@ -16,9 +16,9 @@ data frame with a frequency table
 stack_resp() produces a frequency table with percentages where items are rows, responses are attributes of items, and percentages are presented for each response.
 }
 \examples{
-stack_resp(items_data)
-\donotrun{
+
+
 items_data <- dplyr::select(data_frame, item_1:item_9)
 stack_resp(items_data)
-}
+
 }

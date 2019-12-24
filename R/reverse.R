@@ -6,11 +6,11 @@
 #' @export
 #'
 #' @examples
-#' \donotrun{
+#'
 #' items_data <- items_data %>%
 #'               mutate(item = reverse(original))
 #' dplyr::count(items_data, original, item)
-#' }
+#'
 reverse <- function(var){
 # remove labels
 var <- labelled::remove_labels(var)

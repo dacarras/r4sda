@@ -20,11 +20,11 @@ a logical message
 check_cluster_id() checks if cluster id variable is unique a cross other nested variables. It was designed to assess if schools id are unique countries, and if strata id are unique across countries and regions.
 }
 \examples{
-\donotrun{
+
 
 data_example \%>\%
 check_cluster_id(
   id_j = 'schools',
   id_k = 'country')
-}
+
 }

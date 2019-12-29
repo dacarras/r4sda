@@ -21,6 +21,11 @@ wide_resp <- function(x){
   # recode all missing
   x <- mutate_all(x, funs(replace(., is.na(.), -999)))
 
+  # order of table
+  order_table <- data.frame(
+    var = names(x),
+    var_order = 1:seq(length(names(x)))
+  )
 
   # freq_table
   table_freq <- function(x){
@@ -39,7 +44,10 @@ wide_resp <- function(x){
 
   # wide variable table
   wide_resp <- tidyr::spread(table, resp, per)%>%
-    rename(variable = var)
+    rename(variable = var) %>%
+    left_join(., order_table, by = 'var') %>%
+    arrange(var_order) %>%
+    dplyr::select(-var_order)
 
   return(wide_resp)
   options(warn=0)

@@ -32,6 +32,21 @@ wide_resp <- function(x){
     as.data.frame(table(x))
   }
 
+  # histograms
+  get_hist <- function(x){
+    wide_table <- x %>%
+      r4sda::remove_labels() %>%
+      summarise_all(list(
+        hist = ~skimr::inline_hist(.)
+      ))
+    hist_table <- data.frame(
+      var = names(x),
+      hist = tidyr::gather(wide_table)$value
+    ) %>%
+      mutate(variable = as.character(var))
+    return(hist_table)
+  }
+
   # create stacked table
   table <- lapply(x, table_freq) %>%
     dplyr::bind_rows(., .id = 'var') %>%
@@ -46,6 +61,7 @@ wide_resp <- function(x){
   wide_resp <- tidyr::spread(table, resp, per)%>%
     rename(variable = var) %>%
     left_join(., order_table, by = 'variable') %>%
+    left_join(.,get_hist(x), by = 'variable') %>%
     arrange(var_order) %>%
     dplyr::select(-var_order)
 

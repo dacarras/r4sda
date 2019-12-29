@@ -158,6 +158,8 @@ require(dplyr)
   wide_table <- get_missing(x) %>%
     dplyr::left_join(.,get_complete(x), by = 'var') %>%
     dplyr::left_join(.,get_n(x), by = 'var') %>%
+    mutate(missing = missing/n) %>%
+    mutate(complete = complete/n) %>%
     dplyr::left_join(.,get_mean(x), by = 'var') %>%
     dplyr::left_join(.,get_sd(x), by = 'var') %>%
     dplyr::left_join(.,get_median(x), by = 'var') %>%

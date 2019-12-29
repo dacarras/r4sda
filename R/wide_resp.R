@@ -23,8 +23,8 @@ wide_resp <- function(x){
 
   # order of table
   order_table <- data.frame(
-    var = names(x),
-    var_order = 1:seq(length(names(x)))
+    variable = as.character(names(x)),
+    var_order = seq(1:length(names(x)))
   )
 
   # freq_table
@@ -45,7 +45,7 @@ wide_resp <- function(x){
   # wide variable table
   wide_resp <- tidyr::spread(table, resp, per)%>%
     rename(variable = var) %>%
-    left_join(., order_table, by = 'var') %>%
+    left_join(., order_table, by = 'variable') %>%
     arrange(var_order) %>%
     dplyr::select(-var_order)
 

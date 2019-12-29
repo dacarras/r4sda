@@ -18,6 +18,9 @@ wide_resp <- function(x){
   # load dplyr
   require(dplyr)
 
+  # get table for histogram
+  y <- x
+
   # recode all missing
   x <- mutate_all(x, funs(replace(., is.na(.), -999)))
 
@@ -40,11 +43,10 @@ wide_resp <- function(x){
         hist = ~skimr::inline_hist(.)
       ))
     hist_table <- data.frame(
-      var = names(x),
-      hist = tidyr::gather(wide_table)$value
-    ) %>%
-      mutate(variable = as.character(var))
-    return(hist_table)
+      variable = as.character(names(x)),
+      hist = as.character(tidyr::gather(wide_table)$value)
+    )
+     return(hist_table)
   }
 
   # create stacked table
@@ -61,9 +63,10 @@ wide_resp <- function(x){
   wide_resp <- tidyr::spread(table, resp, per)%>%
     rename(variable = var) %>%
     left_join(., order_table, by = 'variable') %>%
-    left_join(.,get_hist(x), by = 'variable') %>%
+    left_join(.,get_hist(y), by = 'variable') %>%
     arrange(var_order) %>%
-    dplyr::select(-var_order)
+    dplyr::select(-var_order) %>%
+    mutate(hist = as.character(hist))
 
   return(wide_resp)
   options(warn=0)

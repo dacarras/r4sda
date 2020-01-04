@@ -3,26 +3,13 @@
 
   - The goal of r4sda is to make it easier to work with data from large
     scale assessment studies.
-  - Is a collection of simple, wrapper functions, mainly, generated to
-    resolve common tasks when working with data from large scale
+  - Is a collection of simple wrapper functions, mainly, generated to
+    solve common tasks when working with data from large scale
     assessment, secondary data from large national records, or other
     examples of daa with nested observations
   - It generates tables, variables, weights, and other objects to aid
-    large scale assessment data analysis
+    data analysis
   - It relies on libraries such as: dplyr, stringr, purrr among others
-
-# Pendings
-
-  - add sample data to show functions examples
-  - add a viggnete
-  - add merge function
-
-# Done
-
-  - add functions for weights in mixed models, methods a and method b,
-    also called normalized and effective sample size weights
-  - add mean score within observations
-  - add check cluster id function
 
 ## Installation
 
@@ -33,7 +20,24 @@ You can install, in R, the development version of r4sda from this
 devtools::install_github("dacarras/r4sda")
 ```
 
-## List of functions
+# Development
+
+## Pendings
+
+  - add sample data to show functions examples
+  - add a viggnete
+  - add merge function
+
+## Done
+
+  - add functions for weights in mixed models, methods a and method b,
+    also called normalized and effective sample size weights
+  - add mean score within observations
+  - add check cluster id function
+
+# List of functions
+
+## Descriptives
 
   - `wide_resp()` generates a table of items as rows, and response value
     as columns, and displays the percentage of responses per item.
@@ -41,49 +45,67 @@ devtools::install_github("dacarras/r4sda")
     columns, and displays the percentage of responses per item.
   - `stack_resp()` generates a table of items as rows, responses as
     attributes of items, and the percentage of each response category.
+  - `get_desc()` it produces a table with descriptives, including:
+    percentage of missing, complete observations, n, means, sd, minimum,
+    maximum, and histogram of variables.
+
+## Aggregated scores
+
   - `c_mean()` estimate cluster means to aid cluster mean centering in
-    mixed models
-  - `c_sd()` estimate cluster standard deviations of a variable
+    mixed models.
   - `c_wmean()` estimate cluster means to aid cluster mean centering in
-    mixed models, including weights within clusters
+    mixed models, including weights within clusters.
   - `c_sum()` estimate cluster sums to aid cluster variables generation
-    for mixed models
+    for mixed models.
+  - `c_sd()` estimate cluster standard deviations of a variable.
+
+## Manifest Scores
+
   - `reverse()` it generates a reverse score for any given numeric
     vector (it removes the labels if the variable is labelled).
-  - `z_score()` it standardize variables returning these as z scores
+  - `z_score()` it standardize variables returning these as z scores.
   - `mean_score()` it create mean score of variable (i.e. row wise
-    means)
-  - `sum_score()` it create sum score of variables (i.e. row wise sum)
+    means).
+  - `sum_score()` it create sum score of variables (i.e. row wise sum).
+
+## LSA Weights
+
   - `lsa_weights()` add normalized and effective sample weights to the
-    provided data frame
+    provided data frame.
   - `senate_weights()` add senate weights scaled up a to a number
-    (e.g. 500, 1000 or else)
+    (e.g. 500, 1000 or else).
   - `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study
-    data frame
-  - `local_path()` aids the generation of relative working folders, by
-    turning relative locations into a absolute folder paths. Useful for
-    generaing code that works in Unix and Windows machines.
-  - `wide_resp()` generates a table of items as rows, and response value
-    as columns, and displays the percentage of responses per item.
+    data frame.
+
+## Meta-data
+
   - `variable_label()` it gets variable labels from a variable, from
     labelled vector.
   - `value_label()` it generate a table from the value labels from a
     labelled vector.
   - `variables_table()` generates a table of a data frame, including
-    variable names, variable types, sample values, and variable labels
+    variable names, variable types, sample values, and variable labels.
+  - `remove_labels()` it remove labels from a data frame. It aids the
+    use of data frame for other packages and software that needs plain
+    data for their use.
+
+## Mixed Models
+
   - `get_icc()` it estimates the Intra class correlation of an MLM model
     from lme4.
-  - `get_desc()` it produces a table with descriptives.
+
   - `check_cluster_id()` it tests if the cluster id is unique across the
     data frame, or if these repeats between addtional cluster factors.
     For example, it checks if schools id repeats between country
     observations, or if observations id are unique between schools.
+
   - `caterpillar_plot()` it extracts the realizations of a random
     intercept model, generated by `lme4`. The output is a plot, from
     `ggplot2`, thus, the user can further specify theme options, axis
     length, among other customizations. It was develop to visually
     inspect random intercept spreadings, for unconditioned and
     conditioned models.
+
   - `caterpillar_mean_plot()` it extracts the realizations of a random
     intercept model, generated by `lme4`. The output is a plot, from
     `ggplot2`, thus, the user can further specify theme options, axis
@@ -91,12 +113,16 @@ devtools::install_github("dacarras/r4sda")
     inspect random intercept spreadings, for unconditioned and
     conditioned models. This version adds the grand of the model to the
     random effect, depicting the latent mean in return.
-  - `remove_labels()` it remove labels from a data frame. It aids the
-    use of data frame for other packages and software that needs plain
-    data for their use.
+
   - \[…\]
 
-## Example
+## Misc
+
+  - `local_path()` aids the generation of relative working folders, by
+    turning relative locations into a absolute folder paths. Note: only
+    tested in Mac machines.
+
+# Example
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -153,5 +179,3 @@ knitr::kable(wide_resp(items_data), digits = 2)
 | LS2T14   | 0.60 | 0.16 | 0.09 | 0.13 | 0.02 |
 | LS2T15   | 0.10 | 0.13 | 0.07 | 0.68 | 0.02 |
 | LS2T16   | 0.08 | 0.59 | 0.09 | 0.21 | 0.02 |
-
-> Note: this readme is provisory

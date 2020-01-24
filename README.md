@@ -122,6 +122,10 @@ devtools::install_github("dacarras/r4sda")
     turning relative locations into a absolute folder paths. Note: only
     tested in Mac machines.
 
+  - `text_to_table()` helps to take unstructured text that includes the
+    variables of MPLUS data, and create a table with the list of
+    included variables.
+
 # Example
 
 This is a basic example which shows you how to solve a common problem:

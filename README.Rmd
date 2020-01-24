@@ -82,6 +82,7 @@ devtools::install_github("dacarras/r4sda")
 
 - `local_path()` aids the generation of relative working folders, by turning relative locations into a absolute folder paths. Note: only tested in Mac machines.
 
+- `text_to_table()` helps to take unstructured text that includes the variables of MPLUS data, and create a table with the list of included variables.
 
 # Example
 

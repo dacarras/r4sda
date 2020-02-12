@@ -19,7 +19,7 @@ wide_resp <- function(x){
   require(dplyr)
 
   # get table for histogram
-  y <- x
+  y <- as.data.frame(x)
 
   # recode all missing
   x <- mutate_all(x, funs(replace(., is.na(.), -999)))

@@ -6,7 +6,7 @@
   - Is a collection of simple wrapper functions, mainly, generated to
     solve common tasks when working with data from large scale
     assessment, secondary data from large national records, or other
-    examples of daa with nested observations
+    examples of data with nested observations
   - It generates tables, variables, weights, and other objects to aid
     data analysis
   - It relies on libraries such as: dplyr, stringr, purrr among others

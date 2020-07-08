@@ -46,7 +46,7 @@ wide_resp <- function(x){
       variable = as.character(names(x)),
       hist = as.character(tidyr::gather(wide_table)$value)
     )
-     return(hist_table)
+    return(hist_table)
   }
 
   # create stacked table
@@ -56,11 +56,15 @@ wide_resp <- function(x){
     group_by(var) %>%
     mutate(per = n/sum(n)) %>%
     mutate(resp = as.character(resp)) %>%
+    mutate(resp = case_when(
+      nchar(resp)==1 ~ paste0(0,resp),
+      TRUE ~ as.character(resp))) %>%
     mutate(resp = if_else(resp=='-999','NA',resp)) %>%
+    arrange(resp) %>%
     dplyr::select(var, resp, per)
 
   # wide variable table
-  wide_resp <- tidyr::spread(table, resp, per)%>%
+  wide_resp <- tidyr::spread(table, resp, per) %>%
     rename(variable = var) %>%
     left_join(., order_table, by = 'variable') %>%
     left_join(.,get_hist(y), by = 'variable') %>%

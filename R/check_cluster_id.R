@@ -12,8 +12,8 @@
 #'
 #' data_example %>%
 #' check_cluster_id(
-#'   id_j = 'schools',
-#'   id_k = 'country')
+#'   cluster_1 = 'schools',
+#'   cluster_2 = 'country')
 #'
 check_cluster_id <- function(data, cluster_1, cluster_2){
   # libraries we need

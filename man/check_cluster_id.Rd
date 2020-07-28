@@ -24,7 +24,7 @@ check_cluster_id() checks if cluster id variable is unique a cross other nested 
 
 data_example \%>\%
 check_cluster_id(
-  id_j = 'schools',
-  id_k = 'country')
+  cluster_1 = 'schools',
+  cluster_2 = 'country')
 
 }

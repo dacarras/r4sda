@@ -76,6 +76,8 @@ devtools::install_github("dacarras/r4sda")
     (e.g. 500, 1000 or else).
   - `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study
     data frame.
+  - `svy_freq()` estimates proportions for each category from
+    categorical variable, from a survey object.
 
 ## Meta-data
 

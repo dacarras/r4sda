@@ -61,6 +61,7 @@ devtools::install_github("dacarras/r4sda")
 - `lsa_weights()` add normalized and effective sample weights to the provided data frame.
 - `senate_weights()` add senate weights scaled up a to a number (e.g. 500, 1000 or else).
 - `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study data frame.
+- `svy_freq()` estimates proportions for each category from categorical variable, from a survey object.
 
 
 ## Meta-data

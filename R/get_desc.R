@@ -9,14 +9,14 @@
 #'
 #'
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
-#' get_desc(items_data)
+#' get_item_desc(items_data)
 #'
 get_desc <- function(x){
-# remove warnings
-options(warn=-1)
+  # remove warnings
+  options(warn=-1)
 
-# load dplyr
-require(dplyr)
+  # load dplyr
+  require(dplyr)
 
   # histograms
   get_hist <- function(x){
@@ -108,6 +108,36 @@ require(dplyr)
     return(median_table)
   }
 
+  # p25
+  get_p25 <- function(x){
+    wide_table <- x %>%
+      r4sda::remove_labels() %>%
+      summarise_all(list(
+        p25 = ~stats::quantile(., probs = .25, na.rm = TRUE, names = FALSE)
+      ))
+    p25_table <- data.frame(
+      var = names(x),
+      p25 = tidyr::gather(wide_table)$value
+    ) %>%
+      mutate(var = as.character(var))
+    return(p25_table)
+  }
+
+  # p75
+  get_p75 <- function(x){
+    wide_table <- x %>%
+      r4sda::remove_labels() %>%
+      summarise_all(list(
+        p75 = ~stats::quantile(., probs = .75, na.rm = TRUE, names = FALSE)
+      ))
+    p75_table <- data.frame(
+      var = names(x),
+      p75 = tidyr::gather(wide_table)$value
+    ) %>%
+      mutate(var = as.character(var))
+    return(p75_table)
+  }
+
   # missing
   get_missing <- function(x){
     wide_table <- x %>%
@@ -154,6 +184,21 @@ require(dplyr)
 
   }
 
+  # skewness
+  get_skew <- function(x){
+    wide_table <- x %>%
+      r4sda::remove_labels() %>%
+      summarise_all(list(
+        skew = ~moments::skewness(., na.rm = TRUE)
+      ))
+    p75_table <- data.frame(
+      var = names(x),
+      skew = tidyr::gather(wide_table)$value
+    ) %>%
+      mutate(var = as.character(var))
+    return(p75_table)
+  }
+
   # get wide table
   wide_table <- get_missing(x) %>%
     dplyr::left_join(.,get_complete(x), by = 'var') %>%
@@ -162,10 +207,16 @@ require(dplyr)
     mutate(complete = complete/n) %>%
     dplyr::left_join(.,get_mean(x), by = 'var') %>%
     dplyr::left_join(.,get_sd(x), by = 'var') %>%
-    dplyr::left_join(.,get_median(x), by = 'var') %>%
     dplyr::left_join(.,get_min(x), by = 'var') %>%
+    dplyr::left_join(.,get_p25(x), by = 'var') %>%
+    dplyr::left_join(.,get_median(x), by = 'var') %>%
+    dplyr::left_join(.,get_p75(x), by = 'var') %>%
     dplyr::left_join(.,get_max(x), by = 'var') %>%
+    dplyr::left_join(.,get_skew(x), by = 'var') %>%
     dplyr::left_join(.,get_hist(x), by = 'var')
   return(wide_table)
-options(warn=0)
+  options(warn=0)
+
 }
+
+

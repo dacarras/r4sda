@@ -2,7 +2,7 @@
 % Please edit documentation in R/svy_freq.R
 \name{svy_freq}
 \alias{svy_freq}
-\title{svy_freq() produces proportion for observed values of a numeric variable. It generates expected proportions out of a categorical variable, for each alternative.}
+\title{svy_freq() estimates proportion for observed values of a categorical variable, from a survey object.}
 \usage{
 svy_freq(data, variable)
 }
@@ -15,7 +15,7 @@ svy_freq(data, variable)
 a tibble with the estimated proportion, and their 95% confidence interval
 }
 \description{
-svy_freq() produces proportion for observed values of a numeric variable. It generates expected proportions out of a categorical variable, for each alternative.
+svy_freq() estimates proportion for observed values of a categorical variable, from a survey object.
 }
 \examples{
 

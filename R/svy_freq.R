@@ -1,4 +1,4 @@
-#' svy_freq() produces proportion for observed values of a numeric variable. It generates expected proportions out of a categorical variable, for each alternative.
+#' svy_freq() estimates proportion for observed values of a categorical variable, from a survey object.
 #'
 #' @param data a survey object, or survey data frame (i.e. TSL, JKN, BRR or else)
 #' @param variable selected varible from the survey object

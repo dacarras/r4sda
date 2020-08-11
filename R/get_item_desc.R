@@ -189,7 +189,7 @@ get_item_desc <- function(x){
     wide_table <- x %>%
       r4sda::remove_labels() %>%
       summarise_all(list(
-        skew = ~momments::skewness(.)
+        skew = ~moments::skewness(.)
       ))
     p75_table <- data.frame(
       var = names(x),

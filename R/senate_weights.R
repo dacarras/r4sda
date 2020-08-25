@@ -40,7 +40,7 @@ data_weights <- data_frame %>%
                 mutate(ws = wt*rscale_f)                      %>%
                 mutate(ws = haven::zap_labels(ws))            %>%
                 dplyr::select(ws) %>%
-                dplyr::tbl_df()
+                tibble::as_tibble()
 # add to original data
 data_output <- dplyr::bind_cols(data, data_weights)
 

@@ -41,5 +41,5 @@ check_cluster_id <- function(data, cluster_1, cluster_2){
   # test
   return(dplyr::if_else(counter_1 == counter_2,
                         paste0('cluster_1 = ',cluster_1_name,' is unique across cluster_2 = ', cluster_2_name),
-                        paste0('cluster_1 = ',cluster_1_name,' is reapeted between cluster_2 = ', cluster_2_name)))
+                        paste0('cluster_1 = ',cluster_1_name,' is repeated between cluster_2 = ', cluster_2_name)))
 }

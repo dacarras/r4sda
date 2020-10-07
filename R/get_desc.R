@@ -17,6 +17,9 @@ get_desc <- function(x){
 
   # load dplyr
   require(dplyr)
+  require(stats)
+  require(moments)
+  require(skimr)
 
   # histograms
   get_hist <- function(x){

@@ -17,6 +17,7 @@
 svy_freq <- function(data, variable){
 
   require(dplyr)
+  require(rlang)
 
   svy_data <- data
   var_name <- enquo(variable)

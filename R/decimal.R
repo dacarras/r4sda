@@ -2,7 +2,8 @@
 #'
 #' @param x a numeric vector of a single variable
 #'
-#' @return a numeric vector turn into a string
+#' @return a string containing a numeric value, with a given number of decimals
+#'
 #' @export
 #'
 #' @details simple wrapper for `format(round(x, k), nsmall=k)` function, to format decimal numbers

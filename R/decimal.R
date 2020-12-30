@@ -10,7 +10,7 @@
 #'
 #' @examples
 #'
-#' number_with_decimals <- .5838384884
+#' number_with_decimals <- .5838
 #' number_with_two_decimals <- decimal(number_with_decimals,2)
 #' # result is .58
 #' number_with_two_decimals

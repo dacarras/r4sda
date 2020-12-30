@@ -19,6 +19,6 @@ get_desc() produces a table with descriptives where items or variables are rows 
 
 
 items_data <- dplyr::select(data_frame, item_1:item_9)
-get_desc(items_data)
+get_item_desc(items_data)
 
 }

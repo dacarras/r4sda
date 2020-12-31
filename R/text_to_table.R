@@ -3,7 +3,6 @@
 #' @param x a text input
 #'
 #' @return data frame where column one is the position of all variables, and the second column contain all the terms from the text input.
-#' @export
 #'
 #' @examples
 #'
@@ -15,6 +14,7 @@
 #'
 #' text_to_table(text_input)
 #'
+#' @export
 text_to_table <- function(x){
 
   # require libraries

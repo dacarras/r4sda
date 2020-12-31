@@ -3,7 +3,6 @@
 #' @param x a data frame, where rows = observations, and columns = variables
 #'
 #' @return data frame with with descriptive values
-#' @export
 #'
 #' @examples
 #'
@@ -11,6 +10,7 @@
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
 #' r4sda::get_desc(items_data)
 #'
+#' @export
 get_desc <- function(x){
   # remove warnings
   options(warn=-1)

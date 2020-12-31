@@ -3,7 +3,6 @@
 #' @param x a numeric vector of a single variable
 #'
 #' @return a numeric vector
-#' @export
 #'
 #' @details simple wrapper for `ave(variable, group)` function, to estimate cluster means
 #'
@@ -14,6 +13,7 @@
 #' select(x, id_j) %>%
 #' unique() %>%
 #' print
+#' @export
 c_mean <- function(x,j){
 ave(x,j,FUN=function(x) mean(x, na.rm=T))
 }

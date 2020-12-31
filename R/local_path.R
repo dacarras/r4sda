@@ -3,7 +3,6 @@
 #' @param x a string with directory location
 #'
 #' @return an absolute route or logical directory for the current machine
-#' @export
 #'
 #' @examples
 #'
@@ -11,6 +10,7 @@
 #' working_directory <- local_path(getwd())
 #' working_directory # this is the current working directory
 #'
+#' @export
 local_path <- function(x){
 paste0(tools::file_path_as_absolute(x),'/')
 }

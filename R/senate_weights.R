@@ -6,7 +6,6 @@
 #' @param scale number to which the weights will be normalized to
 #'
 #' @return the original data frame with the new senate weights at the end, 'ws'
-#' @export
 #'
 #' @details a collection of dplyr::mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
 #'
@@ -17,7 +16,7 @@
 #'                            scale = 1000,
 #'                            wt = 'wt',
 #'                            id_k = 'id_k')
-#'
+#' @export
 senate_weights <- function(data, wt, scale, id_k){
 
 # libraries

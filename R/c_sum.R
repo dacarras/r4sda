@@ -3,8 +3,7 @@
 #' @param x a numeric vector of a single variable
 #'
 #' @return a numeric vector
-#' @export
-#' 
+#'
 #' @details simple wrapper for `ave(variable, group)` function, to estimate cluster sum
 #'
 #' @examples
@@ -14,6 +13,7 @@
 #' select(cluster_sum, id_j) %>%
 #' unique() %>%
 #' print
+#' @export
 c_sum <- function(x,j){
 ave(x,j,FUN=function(x) sum(x, na.rm=T))
 }

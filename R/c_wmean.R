@@ -5,7 +5,6 @@
 #' @param j a numeric vector for clusters index
 #'
 #' @return a numeric vector
-#' @export
 #'
 #' @details simple wrapper for  ave(x,j), to estimate cluster means weighted by within cluster weights
 #'
@@ -17,6 +16,7 @@
 #' unique() %>%
 #' print
 # pseudo function
+#' @export
 c_wmean <- function(x,w,j){
 
   weighted_values <- w*x

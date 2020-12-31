@@ -3,12 +3,13 @@
 #' @param d is a data_frame
 #'
 #' @return returns a data_frame in tibble::tibble format.
-#' @export
 #'
 #' @details it relies on char_location, variable_label, stringr::str_sub, purr::map_dfr, dplyr::glimpse
 #'
 #' @examples
 #' variable_label(data_frame$variable)
+#'
+#' @export
 variables_table <- function(d){
   # required libraries
   require(dplyr)

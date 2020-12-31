@@ -5,7 +5,6 @@
 #' @param cluster_2 the cluster id which contains the checked cluster (i.e. countries that contains schools)
 #'
 #' @return a logical message
-#' @export
 #'
 #' @examples
 #'
@@ -15,6 +14,7 @@
 #'   cluster_1 = 'schools',
 #'   cluster_2 = 'country')
 #'
+#' @export
 check_cluster_id <- function(data, cluster_1, cluster_2){
   # libraries we need
   require(dplyr)

@@ -3,7 +3,6 @@
 #' @param x a numeric vector
 #'
 #' @return a reverse coded numeric vector
-#' @export
 #'
 #' @examples
 #'
@@ -11,6 +10,7 @@
 #'               mutate(item = reverse(original))
 #' dplyr::count(items_data, original, item)
 #'
+#' @export
 reverse <- function(var){
 # remove labels
 var <- labelled::remove_labels(var)

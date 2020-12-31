@@ -4,8 +4,6 @@
 #'
 #' @return a string containing a numeric value, with a given number of decimals
 #'
-#' @export
-#'
 #' @details simple wrapper for `format(round(x, k), nsmall=k)` function, to format decimal numbers
 #'
 #' @examples
@@ -14,6 +12,7 @@
 #' number_with_two_decimals <- decimal(number_with_decimals,2)
 #' # result is .58
 #' number_with_two_decimals
+#' @export
 decimal <- function(x, k){
   format(round(x, k), nsmall=k)
 

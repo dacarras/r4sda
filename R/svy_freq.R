@@ -4,7 +4,6 @@
 #' @param variable selected varible from the survey object
 #'
 #' @return a tibble with the estimated proportion, and their 95% confidence interval
-#' @export
 #'
 #' @examples
 #'
@@ -14,6 +13,7 @@
 #'   data = .,
 #'   variable = selected_var)
 #'
+#' @export
 svy_freq <- function(data, variable){
 
   require(dplyr)

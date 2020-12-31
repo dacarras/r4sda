@@ -5,7 +5,6 @@
 #'
 #' @return a string with results one could paste into the manuscipt
 #'
-#' @export
 #'
 #' @details simple wrapper for LRT adjusted test (see https://www.statmodel.com/chidiff.shtml).
 #'
@@ -13,6 +12,7 @@
 #'
 #' get_lrt_scf(m00, m01) %>% knitr::kable()
 #'
+#' @export
 get_lrt_scf <- function(model_0, model_1){
   require(dplyr)
   require(purrr)

@@ -3,7 +3,6 @@
 #' @param x a data frame, where rows = observations, and columns = variables
 #'
 #' @return data frame with a frequency table
-#' @export
 #'
 #' @examples
 #'
@@ -11,6 +10,7 @@
 #' items_data <- dplyr::select(data_frame, item_1:item_9)
 #' stack_resp(items_data)
 #'
+#' @export
 stack_resp <- function(x){
 # remove warnings
 options(warn=-1)

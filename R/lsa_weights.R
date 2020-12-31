@@ -9,21 +9,20 @@
 #' @param wj cluster weights (i.e. school weights)
 #'
 #' @return the original data frame with the new weights at the end, where `wa1` nad `wa2` are level 1 and level 2 normalized weights; `wb1` nad `wb2` are level 1 and level 2 effectives sample weights.
-#' @export
 #'
 #' @details a collection of dplyr::mutate sequences to create normalized and effective sample weights (see Rabe-Hesketh & Skrondal, 2006; Snijder & Bosker, 2012)
 #'
 #' @examples
 #' library(dplyr)
 #' data_frame_with_weights <- data_frame %>%
-#'                            r4sda::lsa_weights(., 
-#'                              id_i = 'id_i', 
-#'                              id_j = 'id_j', 
-#'                              id_k = 'id_k', 
-#'                              wt = 'wt', 
-#'                              wi = 'wi', 
-#'                              wj = 'wj' ) 
-#' 
+#'                            r4sda::lsa_weights(.,
+#'                              id_i = 'id_i',
+#'                              id_j = 'id_j',
+#'                              id_k = 'id_k',
+#'                              wt = 'wt',
+#'                              wi = 'wi',
+#'                              wj = 'wj' )
+#' @export
 lsa_weights <- function(data, id_i, id_j, id_k, wt, wi, wj){
 
 # create data frame to produce weights

@@ -1,4 +1,4 @@
-#' z_score() it standardized a continous variable
+#' z_score() it standardized a continuous variable
 #'
 #' @param x a numeric vector
 #'
@@ -9,8 +9,8 @@
 #'
 #' items_data <- items_data %>%
 #'               mutate(zcore = zscore(original))
-#' skimr::skim(items_data$zcore)
 #'
+#' @export
 z_score <- function(x){
 return(as.numeric(scale(x, center = TRUE, scale = TRUE)))
 }

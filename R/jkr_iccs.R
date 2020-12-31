@@ -7,7 +7,6 @@
 #' @param wgt total survey weights
 #'
 #' @return the original data frame with the jacknnifes replicates added.
-#' @export
 #'
 #' @details a loop function to create jackknifes replicate weights (author: `merivera@uc.cl`)
 #'
@@ -21,6 +20,7 @@
 #'                               jki = 'JKREPS',
 #'                               wgt = 'TOTWGTS')
 #'
+#' @export
 jkr_iccs <-function(data, nrep, jkz, jki, wgt){
 
   # data = dataframe

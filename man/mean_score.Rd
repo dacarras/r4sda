@@ -24,5 +24,4 @@ data_frame \%>\%
 mutate(score =  mean_score(x, z, y))
 
 
-
 }

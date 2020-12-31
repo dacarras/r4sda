@@ -20,4 +20,5 @@ it relies on char_location, variable_label, stringr::str_sub, purr::map_dfr, dpl
 }
 \examples{
 variable_label(data_frame$variable)
+
 }

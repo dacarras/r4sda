@@ -20,4 +20,5 @@ is a wrapper to extract the label values from an object
 }
 \examples{
 value_labels(data_frame$variable)
+
 }

@@ -31,5 +31,4 @@ data_frame_with_weights <- data_frame \%>\%
                            scale = 1000,
                            wt = 'wt',
                            id_k = 'id_k')
-
 }

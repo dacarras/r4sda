@@ -33,12 +33,11 @@ a collection of dplyr::mutate sequences to create normalized and effective sampl
 \examples{
 library(dplyr)
 data_frame_with_weights <- data_frame \%>\%
-                           r4sda::lsa_weights(., 
-                             id_i = 'id_i', 
-                             id_j = 'id_j', 
-                             id_k = 'id_k', 
-                             wt = 'wt', 
-                             wi = 'wi', 
-                             wj = 'wj' ) 
-
+                           r4sda::lsa_weights(.,
+                             id_i = 'id_i',
+                             id_j = 'id_j',
+                             id_k = 'id_k',
+                             wt = 'wt',
+                             wi = 'wi',
+                             wj = 'wj' )
 }

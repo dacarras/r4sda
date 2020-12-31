@@ -1,16 +1,18 @@
 #' c_mean() computes the cluster mean for given variable, and a given clustering variable
 #'
 #' @param x a numeric vector of a single variable
+#' @param j a numeric vector that indexes values into groups
 #'
 #' @return a numeric vector
 #'
 #' @details simple wrapper for `ave(variable, group)` function, to estimate cluster means
 #'
 #' @examples
-#' library(dplyr)
-#' data_frame %>%
-#' mutate(cluster_mean =  r4sda::c_mean(x, id_j)) %>%
-#' select(x, id_j) %>%
+#' example_data <- data.frame(x = c(1,2,3,4,5,6), j = c(1,1,1,2,2,2))
+#'
+#' example_data %>%
+#' mutate(cluster_mean =  r4sda::c_mean(x, j)) %>%
+#' select(x, j) %>%
 #' unique() %>%
 #' print
 #' @export

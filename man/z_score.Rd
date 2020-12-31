@@ -2,7 +2,7 @@
 % Please edit documentation in R/z_score.R
 \name{z_score}
 \alias{z_score}
-\title{z_score() it standardized a continous variable}
+\title{z_score() it standardized a continuous variable}
 \usage{
 z_score(x)
 }
@@ -13,12 +13,11 @@ z_score(x)
 an standardized variable, as a z score
 }
 \description{
-z_score() it standardized a continous variable
+z_score() it standardized a continuous variable
 }
 \examples{
 
 items_data <- items_data \%>\%
               mutate(zcore = zscore(original))
-skimr::skim(items_data$zcore)
 
 }

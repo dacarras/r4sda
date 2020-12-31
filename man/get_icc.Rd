@@ -24,5 +24,4 @@ lme4::lmer(y ~ 1 + (1|id_j), data = clustered_data, REML = FALSE) \%>\%
 get_icc(.)
 
 
-
 }

@@ -23,6 +23,4 @@ Given the return object is a common `ggplot2` user can further customize the fig
 lme4::lmer(y ~ 1 + (1|id_j), data = clustered_data, REML = FALSE) \%>\%
 caterpillar_mean_plot(.)
 
-
-
 }

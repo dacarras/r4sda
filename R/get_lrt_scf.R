@@ -1,4 +1,4 @@
-#' get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT
+#' get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT. The mplus objects needs to be generated with MplusAutomation::mplusObject()
 #'
 #' @param model_0 is de constrained model
 #' @param model_1 is the model withe free parameter or parameters
@@ -7,7 +7,7 @@
 #'
 #' @export
 #'
-#' @details simple wrapper for LRT adjusted test (see https://www.statmodel.com/chidiff.shtml)
+#' @details simple wrapper for LRT adjusted test (see https://www.statmodel.com/chidiff.shtml).
 #'
 #' @examples
 #'
@@ -19,6 +19,7 @@ get_lrt_scf <- function(model_0, model_1){
   options(scipen = 999)
 
   deviance_0 <- model_0 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(LL) %>%
@@ -28,6 +29,7 @@ get_lrt_scf <- function(model_0, model_1){
     as.numeric()
 
   deviance_1 <- model_1 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(LL) %>%
@@ -37,6 +39,7 @@ get_lrt_scf <- function(model_0, model_1){
     as.numeric()
 
   scaling_0 <- model_0 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(LLCorrectionFactor) %>%
@@ -46,6 +49,7 @@ get_lrt_scf <- function(model_0, model_1){
     as.numeric()
 
   nparan_0   <- model_0 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(Parameters) %>%
@@ -53,6 +57,7 @@ get_lrt_scf <- function(model_0, model_1){
     as.numeric()
 
   nparan_1   <- model_1 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(Parameters) %>%
@@ -60,6 +65,7 @@ get_lrt_scf <- function(model_0, model_1){
     as.numeric()
 
   scaling_1 <- model_1 %>%
+    purrr::pluck("results") %>%
     purrr::pluck("summaries") %>%
     tibble::as_tibble() %>%
     dplyr::select(LLCorrectionFactor) %>%

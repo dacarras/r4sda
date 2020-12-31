@@ -4,13 +4,13 @@
 #'
 #' @return a numeric vector
 #' @export
-#' 
+#'
 #' @details simple wrapper for `ave(variable, group)` function, to estimate cluster means
 #'
 #' @examples
 #' library(dplyr)
 #' data_frame %>%
-#' mutate(cluster_mean =  c_mean(x, id_j)) %>%
+#' mutate(cluster_mean =  r4sda::c_mean(x, id_j)) %>%
 #' select(x, id_j) %>%
 #' unique() %>%
 #' print

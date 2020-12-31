@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_lrt_scf.R
 \name{get_lrt_scf}
 \alias{get_lrt_scf}
-\title{get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT}
+\title{get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT. The mplus objects needs to be generated with MplusAutomation::mplusObject()}
 \usage{
 get_lrt_scf(model_0, model_1)
 }
@@ -15,10 +15,10 @@ get_lrt_scf(model_0, model_1)
 a string with results one could paste into the manuscipt
 }
 \description{
-get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT
+get_lrt_scf() compares the output of two MPLUS nested models, and calculates the adjusted LRT. The mplus objects needs to be generated with MplusAutomation::mplusObject()
 }
 \details{
-simple wrapper for LRT adjusted test (see https://www.statmodel.com/chidiff.shtml)
+simple wrapper for LRT adjusted test (see https://www.statmodel.com/chidiff.shtml).
 }
 \examples{
 

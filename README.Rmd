@@ -86,6 +86,10 @@ devtools::install_github("dacarras/r4sda")
 
 - `text_to_table()` helps to take unstructured text that includes the variables of MPLUS data, and create a table with the list of included variables.
 
+- `decimal()` format number with decimal places, into strings with a given number of decimal places.
+
+- `get_lrt_scf()` Likelihood Ratio Test for MPLUS fitted model with the MLR estimator (see https://www.statmodel.com/chidiff.shtml.)
+
 # Example
 
 This is a basic example which shows you how to solve a common problem:

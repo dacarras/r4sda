@@ -54,7 +54,7 @@ data_weights  <- data_frame %>%
             mutate(wb2 = wj/awww2)                            %>% # [13]
 # keep only weights
             dplyr::select(wa1, wa2, wb1, wb2) %>%
-            dplyr::tbl_df()
+            tibble::as_tibble()
 
 # add to original data
 data_output <- dplyr::bind_cols(data, data_weights)

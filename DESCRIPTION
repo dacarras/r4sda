@@ -5,6 +5,7 @@ Version: 0.1.0
 Author: dacarras
 Maintainer: The package maintainer <dacarras@uc.cl>
 Description: This is collection of functions, mostly wrappers, that I used very often for secondary data analysis. Most of these secondary data anaysis are done with large scale assessment or national data records in education, or large sample surveys. These functions includes generating scores, table frequencies, codebooks, and other common objects.
+Imports: dplyr, tidyr, haven, labelled, sjlabelled, tibble, lme4, broom.mixed, stringr, rlang, survey, tools
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

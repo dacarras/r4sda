@@ -120,9 +120,24 @@ devtools::install_github("dacarras/r4sda")
 
 ## Misc
 
--   `local_path()` aids the generation of relative working folders, by
-    turning relative locations into a absolute folder paths. Note: only
-    tested in Mac machines.
+-   `local_path()` aids the generation of relative working folders. It
+    assumes your syntax and data folders are on the same logical level
+    of folder structure, and aids getting the parent directory. As such:
+    -   `local_path(getwd())` retrieves the parent directory of workint
+        directory
+    -   `local_path('/00_data/')` retrieves the absolute location of the
+        ‘/00\_data/’ folder, if this folder is below the parent
+        directory of the working directory, where the syntax is located.
+    -   This function allows to run ’\*.rmd’ files between Mac and
+        Windows machines using Rstudio, or R-Box, and source the entire
+        code using a relative folder structure.
+    -   An example of such a structure is:
+
+``` text
+/00_data/
+/01_syntax/
+/02_tables/
+```
 
 -   `text_to_table()` helps to take unstructured text that includes the
     variables of MPLUS data, and create a table with the list of

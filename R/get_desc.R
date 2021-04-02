@@ -202,6 +202,21 @@ get_desc <- function(x){
     return(p75_table)
   }
 
+    # kurtosis
+  get_kurt <- function(x){
+    wide_table <- x %>%
+      r4sda::remove_labels() %>%
+      summarise_all(list(
+        kurt = ~moments::kurtosis(., na.rm = TRUE)
+      ))
+    p75_table <- data.frame(
+      var = names(x),
+      kurt = tidyr::gather(wide_table)$value
+    ) %>%
+      mutate(var = as.character(var))
+    return(p75_table)
+  }
+
   # get wide table
   wide_table <- get_missing(x) %>%
     dplyr::left_join(.,get_complete(x), by = 'var') %>%
@@ -216,6 +231,7 @@ get_desc <- function(x){
     dplyr::left_join(.,get_p75(x), by = 'var') %>%
     dplyr::left_join(.,get_max(x), by = 'var') %>%
     dplyr::left_join(.,get_skew(x), by = 'var') %>%
+    dplyr::left_join(.,get_kurt(x), by = 'var') %>%
     dplyr::left_join(.,get_hist(x), by = 'var')
   return(wide_table)
   options(warn=0)

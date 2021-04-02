@@ -47,7 +47,7 @@ devtools::install_github("dacarras/r4sda")
     attributes of items, and the percentage of each response category.
 -   `get_desc()` it produces a table with descriptives, including:
     percentage of missing, complete observations, n, means, sd, minimum,
-    maximum, and histogram of variables.
+    maximum, skewness, kurtosis, and histogram of variables.
 
 ## Aggregated scores
 

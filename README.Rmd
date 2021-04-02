@@ -39,7 +39,7 @@ devtools::install_github("dacarras/r4sda")
 - `wide_resp()` generates a table of items as rows, and response value as columns, and displays the percentage of responses per item.
 - `wide_var()` generates a table of response as rows, and variablesas columns, and displays the percentage of responses per item.
 - `stack_resp()` generates a table of items as rows, responses as attributes of items, and the percentage of each response category.
-- `get_desc()` it produces a table with descriptives, including: percentage of missing, complete observations, n, means, sd, minimum, maximum, and histogram of variables.
+- `get_desc()` it produces a table with descriptives, including: percentage of missing, complete observations, n, means, sd, minimum, maximum, skewness, kurtosis, and histogram of variables.
 
 ## Aggregated scores
 

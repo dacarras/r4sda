@@ -13,7 +13,7 @@
 #'
 #'
 #' @export
-sum_score = function(..., na.rm=TRUE){
+sum_score <- function(..., na.rm=TRUE){
   rowSums(cbind(...), na.rm=na.rm)
   # source: https://stackoverflow.com/questions/33401788/dplyr-using-mutate-like-rowmeans
   # by: https://stackoverflow.com/users/1191259/frank

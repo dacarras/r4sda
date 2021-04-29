@@ -4,7 +4,7 @@
 \alias{remove_labels}
 \title{remove_labels() from a data frame}
 \usage{
-remove_labels(data)
+remove_labels(x)
 }
 \arguments{
 \item{data}{data frame with labels}

@@ -20,11 +20,11 @@ sequence function to identify a year an ordering index
 }
 \examples{
 library(dplyr)
-person_sequence <- stacked_data \%>\% 
+person_sequence <- stacked_data \%>\%
                    dplyr::select(year, id_j, id_i, id_ij) \%>\%
                    unique() \%>\%
                    group_by(id_ij) \%>\%
-                   summarise(start = min(year), final = first_turnover(year)) \%>\% 
+                   summarise(start = min(year), final = first_turnover(year)) \%>\%
                    mutate(time = final - start + 1)
 
 }

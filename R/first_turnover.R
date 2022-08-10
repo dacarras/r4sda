@@ -8,11 +8,11 @@
 #'
 #' @examples
 #' library(dplyr)
-#' person_sequence <- stacked_data %>% 
+#' person_sequence <- stacked_data %>%
 #'                    dplyr::select(year, id_j, id_i, id_ij) %>%
 #'                    unique() %>%
 #'                    group_by(id_ij) %>%
-#'                    summarise(start = min(year), final = first_turnover(year)) %>% 
+#'                    summarise(start = min(year), final = first_turnover(year)) %>%
 #'                    mutate(time = final - start + 1)
 #'
 #' @export
@@ -36,5 +36,5 @@ first_turnover <- function(a){
   } else{
   return(a[min(which(b==1))])
   }
-# Note: function design by merivera@uc.cl
+# Note: function developed by merivera@uc.cl
 }

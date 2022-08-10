@@ -19,10 +19,11 @@ c_sd() computes the cluster standard deviation for given variable, and a given c
 simple wrapper for `ave(variable, group)` function, to estimate cluster standard deviations
 }
 \examples{
+example_data <- data.frame(x = c(1,2,3,4,5,6), j = c(1,1,1,2,2,2))
 library(dplyr)
-data_frame \%>\%
-mutate(cluster_sd =  c_sd(x, id_j)) \%>\%
-select(x, id_j) \%>\%
+example_data \%>\%
+mutate(cluster_sd =  c_sd(x, j)) \%>\%
+select(x, j) \%>\%
 unique() \%>\%
 print
 }

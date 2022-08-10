@@ -10,7 +10,13 @@
 #'
 #' @examples
 #' library(dplyr)
-#' data_frame %>%
+#' library(dplyr)
+#' example_data <- data.frame(
+#' x = c(1,2,3,4,5,6),
+#' w = c(.4,.4,.4,.6,.6,.6),
+#' id_j = c(1,1,1,2,2,2)
+#' )
+#' example_data %>%
 #' mutate(cluster_mean =  c_wmean(x, w, id_j)) %>%
 #' select(x, id_j, cluster_mean) %>%
 #' unique() %>%

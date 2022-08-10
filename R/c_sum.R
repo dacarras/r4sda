@@ -8,9 +8,10 @@
 #'
 #' @examples
 #' library(dplyr)
-#' data_frame %>%
-#' mutate(cluster_sum =  c_sum(dummy, id_j)) %>%
-#' select(cluster_sum, id_j) %>%
+#' example_data <- data.frame(x = c(1,2,3,4,5,6), j = c(1,1,1,2,2,2))
+#' example_data %>%
+#' mutate(cluster_sum =  c_sum(x, j)) %>%
+#' select(cluster_sum, j) %>%
 #' unique() %>%
 #' print
 #' @export

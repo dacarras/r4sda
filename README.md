@@ -1,15 +1,15 @@
 
 # r4sda
 
--   The goal of r4sda is to make it easier to work with data from large
-    scale assessment studies.
--   Is a collection of simple wrapper functions, mainly, generated to
-    solve common tasks when working with data from large scale
-    assessment, secondary data from large national records, or other
-    examples of data with nested observations
--   It generates tables, variables, weights, and other objects to aid
-    data analysis
--   It relies on libraries such as: dplyr, stringr, purrr among others
+- The goal of r4sda is to make it easier to work with data from large
+  scale assessment studies.
+- Is a collection of simple wrapper functions, mainly, generated to
+  solve common tasks when working with data from large scale assessment,
+  secondary data from large national records, or other examples of data
+  with nested observations
+- It generates tables, variables, weights, and other objects to aid data
+  analysis
+- It relies on libraries such as: dplyr, stringr, purrr among others
 
 ## Installation
 
@@ -24,130 +24,127 @@ devtools::install_github("dacarras/r4sda")
 
 ## Pendings
 
--   add sample data to show functions examples
--   add a viggnete
--   add merge function
+- add sample data to show functions examples
+- add a viggnete
+- add merge function
 
 ## Done
 
--   add functions for weights in mixed models, methods a and method b,
-    also called normalized and effective sample size weights
--   add mean score within observations
--   add check cluster id function
+- add functions for weights in mixed models, methods a and method b,
+  also called normalized and effective sample size weights
+- add mean score within observations
+- add check cluster id function
 
 # List of functions
 
 ## Descriptives
 
--   `wide_resp()` generates a table of items as rows, and response value
-    as columns, and displays the percentage of responses per item.
--   `wide_var()` generates a table of response as rows, and variablesas
-    columns, and displays the percentage of responses per item.
--   `stack_resp()` generates a table of items as rows, responses as
-    attributes of items, and the percentage of each response category.
--   `get_desc()` it produces a table with descriptives, including:
-    percentage of missing, complete observations, n, means, sd, minimum,
-    maximum, skewness, kurtosis, and histogram of variables.
+- `wide_resp()` generates a table of items as rows, and response value
+  as columns, and displays the percentage of responses per item.
+- `wide_var()` generates a table of response as rows, and variablesas
+  columns, and displays the percentage of responses per item.
+- `stack_resp()` generates a table of items as rows, responses as
+  attributes of items, and the percentage of each response category.
+- `get_desc()` it produces a table with descriptives, including:
+  percentage of missing, complete observations, n, means, sd, minimum,
+  maximum, skewness, kurtosis, and histogram of variables.
 
 ## Aggregated scores
 
--   `c_mean()` estimate cluster means to aid cluster mean centering in
-    mixed models.
--   `c_wmean()` estimate cluster means to aid cluster mean centering in
-    mixed models, including weights within clusters.
--   `c_sum()` estimate cluster sums to aid cluster variables generation
-    for mixed models.
--   `c_sd()` estimate cluster standard deviations of a variable.
+- `c_mean()` estimate cluster means to aid cluster mean centering in
+  mixed models.
+- `c_wmean()` estimate cluster means to aid cluster mean centering in
+  mixed models, including weights within clusters.
+- `c_sum()` estimate cluster sums to aid cluster variables generation
+  for mixed models.
+- `c_sd()` estimate cluster standard deviations of a variable.
 
 ## Manifest Scores
 
--   `reverse()` it generates a reverse score for any given numeric
-    vector (it removes the labels if the variable is labelled).
--   `z_score()` it standardize variables returning these as z scores.
--   `mean_score()` it create mean score of variable (i.e. row wise
-    means).
--   `sum_score()` it create sum score of variables (i.e. row wise sum).
+- `reverse()` it generates a reverse score for any given numeric vector
+  (it removes the labels if the variable is labelled).
+- `z_score()` it standardize variables returning these as z scores.
+- `mean_score()` it create mean score of variable (i.e. row wise means).
+- `sum_score()` it create sum score of variables (i.e. row wise sum).
 
 ## LSA Weights
 
--   `lsa_weights()` add normalized and effective sample weights to the
-    provided data frame.
--   `senate_weights()` add senate weights scaled up a to a number
-    (e.g. 500, 1000 or else).
--   `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study
-    data frame.
--   `svy_freq()` estimates proportions for each category from
-    categorical variable, from a survey object.
+- `lsa_weights()` add normalized and effective sample weights to the
+  provided data frame.
+- `senate_weights()` add senate weights scaled up a to a number
+  (e.g. 500, 1000 or else).
+- `jkr_iccs()` add jackknifes replicate weights to ICCS 2009 study data
+  frame.
+- `svy_freq()` estimates proportions for each category from categorical
+  variable, from a survey object.
 
 ## Meta-data
 
--   `variable_label()` it gets variable labels from a variable, from
-    labelled vector.
--   `value_label()` it generate a table from the value labels from a
-    labelled vector.
--   `variables_table()` generates a table of a data frame, including
-    variable names, variable types, sample values, and variable labels.
--   `remove_labels()` it remove labels from a data frame. It aids the
-    use of data frame for other packages and software that needs plain
-    data for their use.
+- `variable_label()` it gets variable labels from a variable, from
+  labelled vector.
+- `value_label()` it generate a table from the value labels from a
+  labelled vector.
+- `variables_table()` generates a table of a data frame, including
+  variable names, variable types, sample values, and variable labels.
+- `remove_labels()` it remove labels from a data frame. It aids the use
+  of data frame for other packages and software that needs plain data
+  for their use.
 
 ## Mixed Models
 
--   `get_icc()` it estimates the Intra class correlation of an MLM model
-    from lme4.
-
--   `check_cluster_id()` it tests if the cluster id is unique across the
-    data frame, or if these repeats between addtional cluster factors.
-    For example, it checks if schools id repeats between country
-    observations, or if observations id are unique between schools.
-
--   `caterpillar_plot()` it extracts the realizations of a random
-    intercept model, generated by `lme4`. The output is a plot, from
-    `ggplot2`, thus, the user can further specify theme options, axis
-    length, among other customizations. It was develop to visually
-    inspect random intercept spreadings, for unconditioned and
-    conditioned models.
-
--   `caterpillar_mean_plot()` it extracts the realizations of a random
-    intercept model, generated by `lme4`. The output is a plot, from
-    `ggplot2`, thus, the user can further specify theme options, axis
-    length, among other customizations. It was develop to visually
-    inspect random intercept spreadings, for unconditioned and
-    conditioned models. This version adds the grand of the model to the
-    random effect, depicting the latent mean in return.
-
--   \[…\]
+- `get_icc()` it estimates the Intra class correlation of an MLM model
+  from lme4.
+- `check_cluster_id()` it tests if the cluster id is unique across the
+  data frame, or if these repeats between addtional cluster factors. For
+  example, it checks if schools id repeats between country observations,
+  or if observations id are unique between schools.
+- `caterpillar_plot()` it extracts the realizations of a random
+  intercept model, generated by `lme4`. The output is a plot, from
+  `ggplot2`, thus, the user can further specify theme options, axis
+  length, among other customizations. It was develop to visually inspect
+  random intercept spreadings, for unconditioned and conditioned models.
+- `caterpillar_mean_plot()` it extracts the realizations of a random
+  intercept model, generated by `lme4`. The output is a plot, from
+  `ggplot2`, thus, the user can further specify theme options, axis
+  length, among other customizations. It was develop to visually inspect
+  random intercept spreadings, for unconditioned and conditioned models.
+  This version adds the grand of the model to the random effect,
+  depicting the latent mean in return.
+- `center_variables()` generate centered variables for mixed models for
+  a covariate
+- \[…\]
 
 ## Misc
 
--   `local_path()` aids the generation of relative working folders. It
-    assumes your syntax and data folders are on the same logical level
-    of folder structure, and aids getting the parent directory. As such:
-    -   `local_path(getwd())` retrieves the parent directory of workint
-        directory
-    -   `local_path('/00_data/')` retrieves the absolute location of the
-        ‘/00\_data/’ folder, if this folder is below the parent
-        directory of the working directory, where the syntax is located.
-    -   This function allows to run ’\*.rmd’ files between Mac and
-        Windows machines using Rstudio, or R-Box, and source the entire
-        code using a relative folder structure.
-    -   An example of such a structure is:
+- `local_path()` aids the generation of relative working folders. It
+  assumes your syntax and data folders are on the same logical level of
+  folder structure, and aids getting the parent directory. As such:
+  - `local_path(getwd())` retrieves the parent directory of workint
+    directory
+  - `local_path('/00_data/')` retrieves the absolute location of the
+    ‘/00_data/’ folder, if this folder is below the parent directory of
+    the working directory, where the syntax is located.
+  - This function allows to run ’\*.rmd’ files between Mac and Windows
+    machines using Rstudio, or R-Box, and source the entire code using a
+    relative folder structure.
+  - An example of such a structure is:
 
 ``` text
+
 /00_data/
 /01_syntax/
 /02_tables/
 ```
 
--   `text_to_table()` helps to take unstructured text that includes the
-    variables of MPLUS data, and create a table with the list of
-    included variables.
+- `text_to_table()` helps to take unstructured text that includes the
+  variables of MPLUS data, and create a table with the list of included
+  variables.
 
--   `decimal()` format number with decimal places, into strings with a
-    given number of decimal places.
+- `decimal()` format number with decimal places, into strings with a
+  given number of decimal places.
 
--   `get_lrt_scf()` Likelihood Ratio Test for MPLUS fitted model with
-    the MLR estimator (see <https://www.statmodel.com/chidiff.shtml>.)
+- `get_lrt_scf()` Likelihood Ratio Test for MPLUS fitted model with the
+  MLR estimator (see <https://www.statmodel.com/chidiff.shtml>.)
 
 # Example
 

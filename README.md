@@ -111,7 +111,10 @@ devtools::install_github("dacarras/r4sda")
   This version adds the grand of the model to the random effect,
   depicting the latent mean in return.
 - `center_variables()` generate centered variables for mixed models for
-  a covariate
+  a covariate. It provides the centered within cluster (*cwc*) and the
+  cluster mean center to the grand mean components. This two components
+  are needed to fit disaggregated models. Moreover, the *cwc* is use to
+  fit random slope models.
 - \[…\]
 
 ## Misc

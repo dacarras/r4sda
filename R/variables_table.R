@@ -16,8 +16,19 @@ variables_table <- function(d){
   require(purrr)
   require(stringr)
 
+  # aux function
+  char_location <- function(string,char){
+    stringr::str_locate(string, char)[, 1]
+  }
+
+  # aux function
+  remove_labels <- function(x){
+  data <- dplyr::mutate(x, across(everything(), as.vector))
+  return(data)
+  }
+
   ## get main objects
-  var_structure <- capture.output(dplyr::glimpse(d))
+  var_structure <- capture.output(dplyr::glimpse(remove_labels(d)))
   text_lines    <- var_structure[-(1:2)]
 
   ## extract specific info

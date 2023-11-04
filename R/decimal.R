@@ -14,7 +14,9 @@
 #' number_with_two_decimals
 #' @export
 decimal <- function(x, k){
-  format(round(x, k), nsmall=k)
+  format(round(x+2*sign(x)*.Machine$double.eps, k), nsmall=k)
 
-  # Ref: https://stackoverflow.com/questions/3443687/formatting-decimal-places-in-r
+# Ref: https://stackoverflow.com/questions/3443687/formatting-decimal-places-in-r
+# Ref: https://stackoverflow.com/questions/59392686/r-how-to-define-round-function-like-in-excel
 }
+

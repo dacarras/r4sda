@@ -28,7 +28,7 @@ variables_table <- function(d){
   }
   
   ## get main objects
-  var_structure <- capture.output(dplyr::glimpse(erce::remove_labels(d)))
+  var_structure <- capture.output(dplyr::glimpse(remove_labels(d)))
 
   ## get main objects
   var_structure <- capture.output(dplyr::glimpse(remove_labels(d)))

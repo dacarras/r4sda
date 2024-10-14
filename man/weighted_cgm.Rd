@@ -7,9 +7,11 @@
 weighted_cgm(data, variable, weight, name)
 }
 \arguments{
-\item{data}{a data frame with variables id_j (cluster variable), and id_k (higher cluster, e.g., country)}
+\item{data}{a data frame with variables ws (normalized survey weight), and id_k (higher cluster, e.g., country)}
 
 \item{variable}{variable to be center}
+
+\item{weight}{normalized survey weight}
 
 \item{name}{acronym for the generated variables}
 }
@@ -22,6 +24,6 @@ weighted_cgm() computes the grand mean centering, while including normalized sur
 \examples{
 library(dplyr)
 data_model \%>\%
-center_variables(data = ., variable = sex , name = sex) \%>\%
+weighted_cgm(data = ., variable = sex , weight = ws, name = sex) \%>\%
 dplyr::glimpse()
 }

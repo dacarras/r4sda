@@ -1,7 +1,8 @@
 #' weighted_cgm() computes the grand mean centering, while including normalized survey weights
 #'
-#' @param data a data frame with variables id_j (cluster variable), and id_k (higher cluster, e.g., country)
+#' @param data a data frame with variables ws (normalized survey weight), and id_k (higher cluster, e.g., country)
 #' @param variable variable to be center
+#' @param weight normalized survey weight
 #' @param name acronym for the generated variables
 #'
 #' @return a data frame, including the center variables
@@ -9,7 +10,7 @@
 #' @examples
 #' library(dplyr)
 #' data_model %>%
-#' center_variables(data = ., variable = sex , name = sex) %>%
+#' weighted_cgm(data = ., variable = sex , weight = ws, name = sex) %>%
 #' dplyr::glimpse()
 #' @export
 weighted_cgm <- function(data, variable, weight, name){
@@ -28,7 +29,7 @@ weights    <- rlang::enquo(weight)
 
 data_model <- data_model %>%
 # raw score
-mutate("{{name}}" := !!covariate) %>%  
+mutate("{{name}}" := !!covariate) %>%
 # cluster means
 # grand mean
 mutate("{{name}}_g" := r4sda::c_wmean(!!covariate, !!weights, id_k)) %>%

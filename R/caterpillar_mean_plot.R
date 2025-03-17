@@ -23,8 +23,9 @@ caterpillar_mean_plot <- function(mlm_model){
   ## extract intercept
   intercept <- broom.mixed::tidy(mlm_model) %>%
     dplyr::filter(effect == 'fixed') %>%
+    dplyr::filter(term == '(Intercept)') %>%
     dplyr::select(estimate) %>%
-    .$estimate %>%
+    dplyr::pull() %>%
     as.numeric()
 
   ## extract random effects

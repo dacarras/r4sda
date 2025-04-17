@@ -30,11 +30,15 @@ as.data.frame(table(x))
 table <- lapply(x, table_freq) %>%
           dplyr::bind_rows(., .id = 'var') %>%
           rename(resp = x, n = Freq) %>%
+          mutate(resp = as.character(resp)) %>%
+          mutate(resp = as.numeric(resp)) %>%
+          mutate(resp = case_when(
+          resp == -999 ~ NA_real_,
+          TRUE ~ resp
+          )) %>%
           group_by(var) %>%
           mutate(per = n/sum(n)) %>%
-          mutate(resp = as.character(resp)) %>%
-          mutate(resp = na_if(resp, -999)) %>%
-          mutate(resp = as.numeric(resp)) %>%
+          ungroup() %>%
           dplyr::select(var, resp, per)
 
 # wide variable table

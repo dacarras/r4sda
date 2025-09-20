@@ -4,7 +4,7 @@
 \alias{na_score}
 \title{na_score() computes a count of missings across a given set of variables in a row wise manner}
 \usage{
-na_score(data, var_txt)
+na_score(..., na.rm = TRUE)
 }
 \arguments{
 \item{x, y, z}{are set of variables from a data frame (i.e. a selection of numeric columns)}

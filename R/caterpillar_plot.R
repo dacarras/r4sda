@@ -23,7 +23,6 @@ caterpillar_plot <- function(mlm_model){
   ## extract random effects
   rand_intercept <- tibble::as_tibble(lme4::ranef(mlm_model)) %>%
     dplyr::filter(term == '(Intercept)') %>%
-    mutate(id_j = as.numeric(as.character(grp))) %>%
     mutate(id_j = seq(1:nrow(.))) %>%
     mutate(id_j = as.numeric(id_j)) %>%
     mutate(u_j = condval) %>%
@@ -41,8 +40,8 @@ caterpillar_plot <- function(mlm_model){
 
   ## plot function
   p <- ggplot(rand_intercept, aes(x=reorder(id_j,u_j), y=u_j, ymin=ll, ymax=ul))+
-    geom_pointrange(colour='grey20', alpha = .25, size = .2)+
-    geom_hline(yintercept = .00, linetype=2, size = .25, colour = "grey50") +
+    geom_pointrange(colour='grey20', alpha = .25, linewidth = .2)+
+    geom_hline(yintercept = .00, linetype=2, linewidth = .25, colour = "grey50") +
     theme(plot.title = element_text(hjust = 0.5)) +
     theme(axis.text.y = element_text(size=6, colour = "grey50")) +
     theme(axis.text.x = element_blank()) +

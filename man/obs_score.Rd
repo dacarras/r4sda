@@ -2,7 +2,7 @@
 % Please edit documentation in R/obs_score.R
 \name{obs_score}
 \alias{obs_score}
-\title{obs_score() computes a count of observes across a given set of variables in a row wise manner}
+\title{obs_score() computes a count of valid observes across a given set of variables in a row wise manner}
 \usage{
 obs_score(..., na.rm = TRUE)
 }
@@ -13,7 +13,7 @@ obs_score(..., na.rm = TRUE)
 a numeric vector
 }
 \description{
-obs_score() computes a count of observes across a given set of variables in a row wise manner
+obs_score() computes a count of valid observes across a given set of variables in a row wise manner
 }
 \details{
 simple wrapper to produce row wise sums (default is na.rm=TRUE)
@@ -21,7 +21,7 @@ simple wrapper to produce row wise sums (default is na.rm=TRUE)
 \examples{
 library(dplyr)
 data_frame \%>\%
-mutate(obs_count   =  obs_count(data = ., var_txt = c('x', 'z', 'y')))
+mutate(obs_score =  obs_score(x, z, y))
 
 
 }

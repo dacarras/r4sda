@@ -1,4 +1,4 @@
-#' obs_score() computes a count of observes across a given set of variables in a row wise manner
+#' obs_score() computes a count of valid observes across a given set of variables in a row wise manner
 #'
 #' @param x,y,z are set of variables from a data frame (i.e. a selection of numeric columns)
 #'
@@ -9,7 +9,7 @@
 #' @examples
 #' library(dplyr)
 #' data_frame %>%
-#' mutate(obs_count   =  obs_count(data = ., var_txt = c('x', 'z', 'y')))
+#' mutate(obs_score =  obs_score(x, z, y))
 #'
 #'
 #' @export

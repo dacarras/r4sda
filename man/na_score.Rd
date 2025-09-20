@@ -21,7 +21,7 @@ simple wrapper to produce row wise sums (default is na.rm=TRUE)
 \examples{
 library(dplyr)
 data_frame \%>\%
-mutate(na_count   =  na_score(data = ., var_txt = c('x', 'z', 'y')))
+mutate(na_count =  na_score(x, z, y))
 
 
 }

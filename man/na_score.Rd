@@ -16,7 +16,7 @@ a numeric vector
 na_score() computes a count of missings across a given set of variables in a row wise manner
 }
 \details{
-simple wrapper to produce row wise sums (default is na.rm=TRUE)
+simple wrapper to produce rowwise sums (default is na.rm=TRUE)
 }
 \examples{
 library(dplyr)

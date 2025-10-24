@@ -4,7 +4,7 @@
 #'
 #' @return a numeric vector
 #'
-#' @details simple wrapper to produce row wise sums (default is na.rm=TRUE)
+#' @details simple wrapper to produce rowwise sums (default is na.rm=TRUE)
 #'
 #' @examples
 #' library(dplyr)
